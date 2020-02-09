@@ -2,14 +2,13 @@
   <div>
     <div class="virus-chart">
       <v-chart :options="epidemicTendencyOptions" />
-      <v-chart :options="epidemicTendencyOptions" />
     </div>
   </div>
 </template>
 
 <script>
 import Echarts from 'vue-echarts'
-import 'echarts/lib/chart/line'
+import 'echarts/lib/chart/bar'
 import 'echarts/lib/component/tooltip'
 
 export default {
@@ -23,7 +22,7 @@ export default {
         tooltip: {
           trigger: 'axis'
         },
-        color: ['#ec9218', '#e83132'],
+        color: ['#ffaa85', '#d98066', '#b35747', '#8b2e29', '#66050b', '#380206'],
         xAxis: [{
           type: 'category',
           axisLabel: {
@@ -59,20 +58,46 @@ export default {
         }],
         series: [
           {
-            type: 'line',
-            name: '新增确诊',
-            symbol: 'circle',
-            symbolSize: 7,
-            lineStyle: {width: 2},
-            data: [10, 20, 34, 41, 42, 60]
+            type: 'bar',
+            name: '1类人',
+            stack: '人群',
+            barWidth: '40',
+            data: [10, 20, 34, 41, 42, 30]
           },
           {
-            type: 'line',
-            name: '新增疑似',
-            symbol: 'circle',
-            symbolSize: 7,
-            lineStyle: {width: 2},
-            data: [2, 10, 20, 31, 30, 37]
+            type: 'bar',
+            name: '2类人',
+            stack: '人群',
+            barWidth: '40',
+            data: [2, 10, 12, 31, 30, 12]
+          },
+          {
+            type: 'bar',
+            name: '3类人',
+            stack: '人群',
+            barWidth: '40',
+            data: [12, 10, 20, 31, 30, 17]
+          },
+          {
+            type: 'bar',
+            name: '4类人',
+            stack: '人群',
+            barWidth: '40',
+            data: [2, 13, 20, 31, 30, 37]
+          },
+          {
+            type: 'bar',
+            name: '5类人',
+            stack: '人群',
+            barWidth: '40',
+            data: [20, 10, 23, 31, 30, 37]
+          },
+          {
+            type: 'bar',
+            name: '6类人',
+            stack: '人群',
+            barWidth: '40',
+            data: [15, 10, 40, 1, 30, 60]
           }
         ]
       }
