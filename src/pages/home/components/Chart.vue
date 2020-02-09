@@ -1,19 +1,114 @@
 <template>
   <div>
     <div class="virus-chart">
-      <img src="../../../assets/img/1.png" alt="图表1" />
-      <img src="../../../assets/img/2.png" alt="图表2" />
+      <v-chart :options="epidemicTendencyOptions" />
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import Echarts from 'vue-echarts'
+import 'echarts/lib/chart/bar'
+import 'echarts/lib/component/tooltip'
+
+export default {
+  components: {
+    'v-chart': Echarts
+  },
+
+  data() {
+    return {
+      epidemicTendencyOptions: {
+        tooltip: {
+          trigger: 'axis'
+        },
+        color: ['#ffaa85', '#d98066', '#b35747', '#8b2e29', '#66050b', '#380206'],
+        xAxis: [{
+          type: 'category',
+          axisLabel: {
+            rotate: 20,
+            interval: 0,
+            color: 'rgb(174, 174, 174)',
+            fontSize: '14px'
+          },
+          data: [1.28, 1.29, 1.30, 1.31, 2.1, 2.2],
+          axisLine: {show: false},
+          axisTick: {show: false},
+          splitLine: {show: false},
+          axisPointer: {
+            type: 'line',
+            label: {
+              show: false
+            },
+            lineStyle: {color: 'rgba(215, 215, 217)', type: 'dotted'}
+          }
+        }],
+        yAxis: [{
+          type: 'value',
+          scale: true,
+          name: '件',
+          nameTextStyle: {
+            color: 'rgb(174, 174, 174)'},
+          axisLabel: {color: 'rgb(174, 174, 174)',
+            fontSize: '14px'
+          },
+          axisLine: {show: false},
+          axisTick: {show: false},
+          splitLine: {show: false}
+        }],
+        series: [
+          {
+            type: 'bar',
+            name: '1类人',
+            stack: '人群',
+            barWidth: '40',
+            data: [10, 20, 34, 41, 42, 30]
+          },
+          {
+            type: 'bar',
+            name: '2类人',
+            stack: '人群',
+            barWidth: '40',
+            data: [2, 10, 12, 31, 30, 12]
+          },
+          {
+            type: 'bar',
+            name: '3类人',
+            stack: '人群',
+            barWidth: '40',
+            data: [12, 10, 20, 31, 30, 17]
+          },
+          {
+            type: 'bar',
+            name: '4类人',
+            stack: '人群',
+            barWidth: '40',
+            data: [2, 13, 20, 31, 30, 37]
+          },
+          {
+            type: 'bar',
+            name: '5类人',
+            stack: '人群',
+            barWidth: '40',
+            data: [20, 10, 23, 31, 30, 37]
+          },
+          {
+            type: 'bar',
+            name: '6类人',
+            stack: '人群',
+            barWidth: '40',
+            data: [15, 10, 40, 1, 30, 60]
+          }
+        ]
+      }
+    }
+  }
+}
 </script>
 
 <style lang="less" scoped>
-.virus-chart img {
+.echarts {
   width: 100%;
-  height: 100%;
+  height: 550px;
 }
 </style>
