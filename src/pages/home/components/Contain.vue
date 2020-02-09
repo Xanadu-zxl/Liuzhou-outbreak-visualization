@@ -4,7 +4,7 @@
     <div id="ptab-0">
       <h2 class="h2">国内疫情</h2>
       <p>
-        <span>更新至 2020.02.07 14:59</span>
+        <span>更新至 {{date}}</span>
         <span class="span">
           <img src="../../../assets/img/icon1.png" />
           数据说明
@@ -94,6 +94,12 @@ export default {
     HomeNav,
     HomeMap,
     HomeChart
+  },
+
+  data() {
+    return {
+      date: new Date()
+    }
   }
 }
 </script>

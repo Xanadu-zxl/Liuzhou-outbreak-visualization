@@ -23,38 +23,37 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr v-for="city in citys" :key="city.index">
             <td class="td">
               <div class="city">
                 <span class="triangle"></span>
-                <span>湖北</span>
+                <span>{{city.cityName}}</span>
               </div>
             </td>
-            <td class="td1">24953</td>
-            <td class="td2">1124</td>
-            <td class="td2">699</td>
+            <td class="td1">{{city.affirm}}</td>
+            <td class="td2">{{city.cure}}</td>
+            <td class="td2">{{city.die}}</td>
           </tr>
           <tr>
-            <td class="td">
-              <div class="city">
-                <span class="triangle"></span>
-                <span>广东</span>
-              </div>
+            <td colspan="4">
+              <table class="VirusTable_1-1-131_3U6wJT">
+                <tbody>
+                  <tr class="VirusTable_1-1-131_2AH4U9">
+                    <td>
+                      <a href="#" class="VirusTable_1-1-131_2yUfq-">
+                        <div class="VirusTable_1-1-131_AcDK7v">拉萨</div>
+                        <div class="VirusTable_1-1-131_2wMlZf">
+                          <span class="VirusTable_1-1-131_3V1ugB"></span>
+                        </div>
+                      </a>
+                    </td>
+                    <td>1</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
             </td>
-            <td class="td1">1095</td>
-            <td class="td2">115</td>
-            <td class="td2">1</td>
-          </tr>
-          <tr>
-            <td class="td">
-              <div class="city">
-                <span class="triangle"></span>
-                <span>浙江</span>
-              </div>
-            </td>
-            <td class="td1">1048</td>
-            <td class="td2">173</td>
-            <td class="td2">-</td>
           </tr>
         </tbody>
       </table>
@@ -63,7 +62,32 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      citys: [
+        {
+          cityName: '广西',
+          affirm: '195',
+          cure: '18',
+          die: '1'
+        },
+        {
+          cityName: '云南',
+          affirm: '140',
+          cure: '17',
+          die: '-'
+        },
+        {
+          cityName: '测试',
+          affirm: '195',
+          cure: '18',
+          die: '1'
+        }
+      ]
+    }
+  }
+}
 </script>
 
 <style lang="less" scoped>
