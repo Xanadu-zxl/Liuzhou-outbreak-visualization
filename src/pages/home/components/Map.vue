@@ -90,8 +90,8 @@ export default {
         {color: '#ffaa85', min: 1, max: 9}
       ],
       counts: [
-        {name: '雒容镇', count: 3},
-        {name: '洛埠镇', count: 12}
+        {name: '雒容镇', a: 3, b: 2, c: 4, d: 6, e: 5, f: 7, g: 4},
+        {name: '洛埠镇', a: 12, b: 2, c: 7, d: 0, e: 8, f: 7, g: 2}
       ],
       areaHoverStyle: {
         strokeColor: '#ffffff',
@@ -109,9 +109,9 @@ export default {
         const count = this.counts.find(item => item.name === group.name)
         const currentStyle = _.findLast(
           _.sortBy(this.mapRange, 'min'),
-          ({ min }) => count.count >= min
+          ({ min }) => count.a >= min
         );
-        group.count = count.count
+        group = {...group, ...count}
         group.style.fillColor = currentStyle.color
         return group
       })
@@ -123,8 +123,14 @@ export default {
       this.selectedArea = this.selectedArea === json.properties.group.name ? '' : json.properties.group.name
       if(this.selectedArea) {
         const content = `<div class='info-container'>
-        <div class="info-title">${json.properties.group.name}</div>
-          <div class="info-title">${json.properties.group.count}</div>
+        <div class="info-name">${json.properties.group.name}</div>
+          <div class="info-title">重点人群管控总数: ${json.properties.group.a}</div>
+          <div class="info-title">来自武汉市的市外人员: ${json.properties.group.b}</div>
+          <div class="info-title">来自湖北省（除武汉市）的市外人员: ${json.properties.group.c}</div>
+          <div class="info-title">我市到过武汉市的人员: ${json.properties.group.d}</div>
+          <div class="info-title">我市到过湖北省（除武汉市）的人员: ${json.properties.group.e}</div>
+          <div class="info-title">密切接触者: ${json.properties.group.f}</div>
+          <div class="info-title">我市仍在湖北省出差、休假、旅游、探亲等短时间停留人员: ${json.properties.group.g}</div>
         </div>`
         this.$refs.infowindowRef.createInfoWindow({content: content, location: json.properties.group.center})
       } else {
@@ -145,6 +151,10 @@ export default {
 <style lang="less">
 .map {
   height: 500px;
+}
+
+.amap-info {
+  width: 500px;
 }
 
 .info-container {
