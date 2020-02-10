@@ -81,6 +81,7 @@ export default {
         resizeEnable: true,
         center: [109.603274, 24.398684],
       },
+      selectedArea: '',
       mapRange: [
         {color: '#660309', min: 10000},
         {color: '#8c0f0e', min: 1000, max: 9999},
@@ -119,11 +120,16 @@ export default {
 
   methods: {
     areaClickFunc (json, area, vm) {
-      const content = `<div class='info-container'>
+      this.selectedArea = this.selectedArea === json.properties.group.name ? '' : json.properties.group.name
+      if(this.selectedArea) {
+        const content = `<div class='info-container'>
         <div class="info-title">${json.properties.group.name}</div>
-        <div class="info-title">${json.properties.group.count}</div>
-      </div>`
-      this.$refs.infowindowRef.createInfoWindow({content: content, location: json.properties.group.center})
+          <div class="info-title">${json.properties.group.count}</div>
+        </div>`
+        this.$refs.infowindowRef.createInfoWindow({content: content, location: json.properties.group.center})
+      } else {
+        this.$refs.infowindowRef.close()
+      }
     },
 
     generateRangeText (item) {
