@@ -19,6 +19,10 @@
         :areaHoverStyle="areaHoverStyle"
         @area-clicked="areaClickFunc"
       />
+      <text-marker
+        :texts="regionLabels"
+        :textStyle="regionLabelStyle"
+      />
       <info-window
         ref="infowindowRef"
         :options="{
@@ -36,6 +40,7 @@ import _ from 'lodash'
 import {
   BaseMap,
   Regions,
+  TextMarker,
   InfoWindow,
 } from '@byzanteam/map-ui';
 import Liuzhou from '../../../resources/liuzhou.json'
@@ -67,6 +72,7 @@ export default {
   components: {
     BaseMap,
     Regions,
+    TextMarker,
     InfoWindow,
   },
 
@@ -93,6 +99,24 @@ export default {
         {name: '雒容镇', a: 3, b: 2, c: 4, d: 6, e: 5, f: 7, g: 4},
         {name: '洛埠镇', a: 12, b: 2, c: 7, d: 0, e: 8, f: 7, g: 2}
       ],
+      regionLabels: [
+        {
+          text: '雒容镇',
+          position: [109.603274, 24.398684]
+        },
+        {
+          text: '洛埠镇',
+          position: [109.513237,24.430415]
+        },
+        {
+          text: '洛埠镇',
+          position: [109.505287,24.390415]
+        },
+      ],
+      regionLabelStyle: {
+        color: '#333333',
+        'font-size': 10,
+      },
       areaHoverStyle: {
         strokeColor: '#ffffff',
         strokeWeight: 1,
@@ -153,8 +177,16 @@ export default {
   height: 500px;
 }
 
+.amap-marker {
+  pointer-events: none;
+}
+
 .amap-info {
   width: 500px;
+}
+
+.amap-overlay-text-container {
+  font-size: 10px !important;
 }
 
 .info-container {
