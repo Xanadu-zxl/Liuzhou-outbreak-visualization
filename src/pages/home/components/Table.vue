@@ -15,10 +15,14 @@
         row-key="id"
         :tree-props="{children: 'children', hasChildren: 'hasChildren'}"
       >
-        <el-table-column prop="cityName" label="地区" width="220" align="left" header-align="center"></el-table-column>
-        <el-table-column prop="affirm" label="确诊" width="170" align="center"></el-table-column>
-        <el-table-column prop="cure" label="治愈" width="170" align="center"></el-table-column>
-        <el-table-column prop="die" label="死亡" width="170" align="center"></el-table-column>
+        <el-table-column prop="cityName" label="区域" width="220" align="left" header-align="center"></el-table-column>
+        <el-table-column prop="affirm" label="来自武汉" width="70" align="center"></el-table-column>
+        <el-table-column prop="cure" label="来自湖北" width="70" align="center"></el-table-column>
+        <el-table-column prop="die" label="我市到过武汉" width="70" align="center"></el-table-column>
+        <el-table-column prop="die" label="我市到过湖北" width="70" align="center"></el-table-column>
+        <el-table-column prop="die" label="密切接触者" width="70" align="center"></el-table-column>
+        <el-table-column prop="die" label="仍在湖北人员" width="70" align="center"></el-table-column>
+        <el-table-column prop="die" label="重点人群管控总数" width="70" align="center"></el-table-column>
       </el-table>
     </table>
   </div>
