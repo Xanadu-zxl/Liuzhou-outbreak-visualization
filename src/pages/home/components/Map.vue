@@ -1,26 +1,35 @@
 <template>
-  <base-map
-    ref="mapRef"
-    :map-options="mapOptions"
-    features="none"
-    :map-style="mapStyle"
+  <div class="map-wrapper">
+    <div class="map-legend">
+      <div class="legend-item" v-for="(item, index) in mapRange" :key="index">
+        <span class="legend-item-color" :style="{backgroundColor: item.color}"></span>
+        <span class="legend-item-text">{{item.text}}</span>
+      </div>
+    </div>
+    <base-map
+      ref="mapRef"
+      :map-options="mapOptions"
+      features="none"
+      :map-style="mapStyle"
 
-  >
-    <regions
-      ref="regionsRef"
-      :areas="areas"
-      :groups="groups"
-      :areaHoverStyle="areaHoverStyle"
-      @area-clicked="areaClickFunc"
-    />
-    <info-window
-      ref="infowindowRef"
-      :options="{
-        closeWhenClickMap: true,
-        isCustom: true
-      }"
-    />
-  </base-map>
+    >
+      <regions
+        ref="regionsRef"
+        :areas="areas"
+        :groups="groups"
+        :areaHoverStyle="areaHoverStyle"
+        @area-clicked="areaClickFunc"
+      />
+      <info-window
+        ref="infowindowRef"
+        :options="{
+          closeWhenClickMap: true,
+          isCustom: true
+        }"
+      />
+    </base-map>
+  </div>
+
 </template>
 
 <script>
@@ -49,6 +58,13 @@ export default {
         resizeEnable: true,
         center: [109.603274, 24.398684],
       },
+      mapRange: [
+        {color: '#660309', text: '> 10000'},
+        {color: '#8c0f0e', text: '1000 - 9999'},
+        {color: '#cc2a2a', text: '100 - 999'},
+        {color: '#ff7a69', text: '10 - 99'},
+        {color: '#ffaa85', text: '1 - 9'}
+      ],
       groups: [
         {
           name: '雒容镇',
@@ -95,7 +111,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less">
 .map {
   height: 500px;
 }
@@ -118,5 +134,35 @@ export default {
   bottom: -19px;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.map-wrapper {
+  position: relative;
+
+  .map-legend {
+    position: absolute;
+    bottom: 0;
+    height: 120px;
+    width: 200px;
+    left: 30px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+
+    .legend-item-color {
+      width: 15px;
+      height: 10px;
+      border-radius: 2px;
+      background-color: #ffaa85;
+    }
+
+    .legend-item-text {
+      color: #333333;
+      font-size: 12px;
+      margin-left: 10px;
+    }
+  }
 }
 </style>
