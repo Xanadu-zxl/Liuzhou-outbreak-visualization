@@ -11,6 +11,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@byzanteam/map-ui": "^0.1.6",
     "echarts": "^4.6.0",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
