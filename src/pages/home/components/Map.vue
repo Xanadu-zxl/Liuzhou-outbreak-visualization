@@ -3,7 +3,7 @@
     <div class="map-legend">
       <div class="legend-item" v-for="(item, index) in mapRange" :key="index">
         <span class="legend-item-color" :style="{backgroundColor: item.color}"></span>
-        <span class="legend-item-text">{{item.text}}</span>
+        <span class="legend-item-text">{{generateRangeText(item)}}</span>
       </div>
     </div>
     <base-map
@@ -11,7 +11,6 @@
       :map-options="mapOptions"
       features="none"
       :map-style="mapStyle"
-
     >
       <regions
         ref="regionsRef"
@@ -33,12 +32,36 @@
 </template>
 
 <script>
+import _ from 'lodash'
 import {
   BaseMap,
   Regions,
   InfoWindow,
 } from '@byzanteam/map-ui';
 import Liuzhou from '../../../resources/liuzhou.json'
+
+const GROUPS = [
+  {
+    name: '雒容镇',
+    codes: [1],
+    center: [109.603274, 24.398684],
+    style: {
+      fillOpacity: 0.8,
+      strokeColor: '#ffffff',
+      strokeWeight: 1,
+    }
+  },
+  {
+    name: '洛埠镇',
+    codes: [2],
+    center: [109.513237,24.430415],
+    style: {
+      fillOpacity: 0.8,
+      strokeColor: '#ffffff',
+      strokeWeight: 1,
+    }
+  }
+]
 
 export default {
   components: {
@@ -59,35 +82,15 @@ export default {
         center: [109.603274, 24.398684],
       },
       mapRange: [
-        {color: '#660309', text: '> 10000'},
-        {color: '#8c0f0e', text: '1000 - 9999'},
-        {color: '#cc2a2a', text: '100 - 999'},
-        {color: '#ff7a69', text: '10 - 99'},
-        {color: '#ffaa85', text: '1 - 9'}
+        {color: '#660309', min: 10000},
+        {color: '#8c0f0e', min: 1000, max: 9999},
+        {color: '#cc2a2a', min: 100, max: 999},
+        {color: '#ff7a69', min: 10, max: 99},
+        {color: '#ffaa85', min: 1, max: 9}
       ],
-      groups: [
-        {
-          name: '雒容镇',
-          codes: [1],
-          center: [109.603274, 24.398684],
-          style: {
-            fillColor: '#ffaa85',
-            fillOpacity: 0.8,
-            strokeColor: '#ffffff',
-            strokeWeight: 1,
-          }
-        },
-        {
-          name: '洛埠镇',
-          codes: [2],
-          center: [109.513237,24.430415],
-          style: {
-            fillColor: '#d98066',
-            fillOpacity: 0.8,
-            strokeColor: '#ffffff',
-            strokeWeight: 1,
-          }
-        }
+      counts: [
+        {name: '雒容镇', count: 3},
+        {name: '洛埠镇', count: 12}
       ],
       areaHoverStyle: {
         strokeColor: '#ffffff',
@@ -99,14 +102,36 @@ export default {
     }
   },
 
+  computed: {
+    groups () {
+      return GROUPS.map((group) => {
+        const count = this.counts.find(item => item.name === group.name)
+        const currentStyle = _.findLast(
+          _.sortBy(this.mapRange, 'min'),
+          ({ min }) => count.count >= min
+        );
+        group.count = count.count
+        group.style.fillColor = currentStyle.color
+        return group
+      })
+    }
+  },
+
   methods: {
     areaClickFunc (json, area, vm) {
       const content = `<div class='info-container'>
         <div class="info-title">${json.properties.group.name}</div>
-        <div class="info-title">1</div>
+        <div class="info-title">${json.properties.group.count}</div>
       </div>`
       this.$refs.infowindowRef.createInfoWindow({content: content, location: json.properties.group.center})
-    }
+    },
+
+    generateRangeText (item) {
+      if(item.max) {
+        return `${item.min} - ${item.max}`
+      }
+      return `> ${item.min}`
+    },
   }
 }
 </script>
