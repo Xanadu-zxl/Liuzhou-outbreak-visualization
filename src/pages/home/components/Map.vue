@@ -12,12 +12,8 @@ import 'echarts/lib/chart/map'
 import 'echarts/lib/component/tooltip'
 import 'echarts/lib/component/visualMap'
 import Liuzhou from '../../../resources/liuzhou.json'
-import Luobu from '../../../resources/luobu.json'
-import Luorong from '../../../resources/luorong.json'
 
 Echarts.registerMap('LZ', Liuzhou);
-Echarts.registerMap('LB', Luobu);
-Echarts.registerMap('LR', Luorong);
 export default {
   components: {
     'v-chart': Echarts
@@ -64,39 +60,10 @@ export default {
             type: 'map',
             mapType: 'LZ',
             label: {
-              show: false
-            },
-            data: [
-              {name: '三江侗族自治县', value: 0},
-              {name: '融水苗族自治县', value: 0},
-              {name: '融安县', value: 0},
-              {name: '柳城县', value: 0},
-              {name: '鹿寨县', value: 0},
-              {name: '柳北', value: 0},
-              {name: '鱼峰区', value: 0},
-              {name: '柳南区', value: 0},
-              {name: '柳江区', value: 0}
-            ]
-          },
-          {
-            name: '洛埠镇',
-            type: 'map',
-            mapType: 'LB',
-            label: {
               show: true
             },
             data: [
-              {name: '洛埠镇', value: 4}
-            ]
-          },
-          {
-            name: '雒容镇',
-            type: 'map',
-            mapType: 'LR',
-            label: {
-              show: true
-            },
-            data: [
+              {name: '洛埠镇', value: 4},
               {name: '雒容镇', value: 12}
             ]
           }
