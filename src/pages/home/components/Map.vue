@@ -41,7 +41,7 @@ import {
   BaseMap,
   Regions,
   TextMarker,
-  InfoWindow,
+  InfoWindow
 } from '@byzanteam/map-ui';
 import Liuzhou from '../../../resources/liuzhou.json'
 
@@ -53,17 +53,17 @@ const GROUPS = [
     style: {
       fillOpacity: 0.8,
       strokeColor: '#ffffff',
-      strokeWeight: 1,
+      strokeWeight: 1
     }
   },
   {
     name: '洛埠镇',
     codes: [2],
-    center: [109.513237,24.430415],
+    center: [109.513237, 24.430415],
     style: {
       fillOpacity: 0.8,
       strokeColor: '#ffffff',
-      strokeWeight: 1,
+      strokeWeight: 1
     }
   }
 ]
@@ -73,7 +73,7 @@ export default {
     BaseMap,
     Regions,
     TextMarker,
-    InfoWindow,
+    InfoWindow
   },
 
   data() {
@@ -85,7 +85,7 @@ export default {
         zoomEnable: false,
         dragEnable: false,
         resizeEnable: true,
-        center: [109.603274, 24.398684],
+        center: [109.603274, 24.398684]
       },
       selectedArea: '',
       mapRange: [
@@ -106,24 +106,24 @@ export default {
         },
         {
           text: '洛埠镇',
-          position: [109.513237,24.430415]
+          position: [109.513237, 24.430415]
         },
         {
           text: '洛埠镇',
-          position: [109.505287,24.390415]
-        },
+          position: [109.505287, 24.390415]
+        }
       ],
       regionLabelStyle: {
         color: '#333333',
-        'font-size': 10,
+        'font-size': 10
       },
       areaHoverStyle: {
         strokeColor: '#ffffff',
         strokeWeight: 1,
         fillColor: '#380206',
         strokeOpacity: 1,
-        fillOpacity: 0.1,
-      },
+        fillOpacity: 0.1
+      }
     }
   },
 
@@ -145,7 +145,7 @@ export default {
   methods: {
     areaClickFunc (json, area, vm) {
       this.selectedArea = this.selectedArea === json.properties.group.name ? '' : json.properties.group.name
-      if(this.selectedArea) {
+      if (this.selectedArea) {
         const content = `<div class='info-container'>
         <div class="info-name">${json.properties.group.name}</div>
           <div class="info-title">重点人群管控总数: ${json.properties.group.a}</div>
@@ -163,11 +163,11 @@ export default {
     },
 
     generateRangeText (item) {
-      if(item.max) {
+      if (item.max) {
         return `${item.min} - ${item.max}`
       }
       return `> ${item.min}`
-    },
+    }
   }
 }
 </script>
