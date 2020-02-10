@@ -4,69 +4,105 @@
       <img src="../../../assets/img/icon.png" alt />
       <span class="span">来自国家卫健委公布的全天疫情数据</span>
     </div>
-    <div class="content">
-      <table class="table">
-        <thead>
-          <tr class="tr">
-            <th>
-              <div>地区</div>
-            </th>
-            <th>
-              <div>确诊</div>
-            </th>
-            <th>
-              <div>治愈</div>
-            </th>
-            <th>
-              <div>死亡</div>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="td">
-              <div class="city">
-                <span class="triangle"></span>
-                <span>湖北</span>
-              </div>
-            </td>
-            <td class="td1">24953</td>
-            <td class="td2">1124</td>
-            <td class="td2">699</td>
-          </tr>
-          <tr>
-            <td class="td">
-              <div class="city">
-                <span class="triangle"></span>
-                <span>广东</span>
-              </div>
-            </td>
-            <td class="td1">1095</td>
-            <td class="td2">115</td>
-            <td class="td2">1</td>
-          </tr>
-          <tr>
-            <td class="td">
-              <div class="city">
-                <span class="triangle"></span>
-                <span>浙江</span>
-              </div>
-            </td>
-            <td class="td1">1048</td>
-            <td class="td2">173</td>
-            <td class="td2">-</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+
+    <table class="table">
+      <el-table
+        class="el-table"
+        :data="tableData"
+        style="width: 100%"
+        lazy
+        :load="load"
+        row-key="id"
+        :tree-props="{children: 'children', hasChildren: 'hasChildren'}"
+      >
+        <el-table-column prop="cityName" label="地区" width="220" align="left" header-align="center"></el-table-column>
+        <el-table-column prop="affirm" label="确诊" width="170" align="center"></el-table-column>
+        <el-table-column prop="cure" label="治愈" width="170" align="center"></el-table-column>
+        <el-table-column prop="die" label="死亡" width="170" align="center"></el-table-column>
+      </el-table>
+    </table>
   </div>
 </template>
 
 <script>
-export default {}
+import Vue from 'vue'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+
+Vue.use(ElementUI)
+
+export default {
+  data() {
+    return {
+      tableData: [
+        {
+          id: 1,
+          cityName: '广西',
+          affirm: '195',
+          cure: '18',
+          die: '1',
+          children: [
+            {
+              id: 11,
+              cityName: '柳州',
+              affirm: '195',
+              cure: '18',
+              die: '1'
+            },
+            {
+              id: 12,
+              cityName: '柳州',
+              affirm: '195',
+              cure: '18',
+              die: '1'
+            }
+          ]
+        },
+        {
+          id: 2,
+          cityName: '广西',
+          affirm: '195',
+          cure: '18',
+          die: '1',
+          children: [
+            {
+              id: 21,
+              cityName: '柳州',
+              affirm: '195',
+              cure: '18',
+              die: '1'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  methods: {
+    load(tree, treeNode, resolve) {
+      setTimeout(() => {
+        resolve([
+          {
+            id: 31,
+            cityName: '2016-05-01',
+            affirm: '王小虎',
+            cure: '111',
+            die: '222'
+          },
+          {
+            id: 32,
+            cityName: '2016-05-01',
+            addirm: '王小虎',
+            cure: '111',
+            die: '222'
+          }
+        ])
+      }, 1000)
+    }
+  }
+}
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 .tableDate {
   font-size: 0.8125rem;
   height: 0.8125rem;
@@ -90,74 +126,43 @@ export default {}
   }
 }
 
-.content {
-  .table {
-    table-layout: fixed;
-    width: 100%;
-    margin-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    text-align: center;
-    border-spacing: 2px 6px;
-    font-size: 0.938rem;
-    color: #4d5054;
-    .tr {
-      color: #555;
-      font-size: 0.938rem;
-      font-weight: 700;
+.el-table th,
+.el-table td {
+  padding: 1px;
+}
 
-      th {
-        text-align: center;
-        font-weight: 700;
-      }
+.is-center .cell {
+  border-spacing: 2px 6px;
+  font-size: 0.938rem;
+  color: #4d5054;
+  margin-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
 
-      th > div {
-        position: relative;
-        top: 0.2rem;
-      }
-    }
+.el-table th.is-leaf {
+  border: 0px;
+}
 
-    .td {
-      background-color: #00bec9;
-      color: #fff;
-      font-weight: 700;
-      border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px;
-
-      .city {
-        padding: 0.3125rem 0;
-        line-height: 1.25rem;
-        box-sizing: border-box;
-        padding-left: 0.5rem;
-        text-align: left;
-        font-weight: 700;
-
-        .triangle {
-          width: 9px;
-          display: inline-block;
-          height: 6px;
-          background-image: url(//mms-res.cdn.bcebos.com/mms-res/voicefe/captain/mola/Virus/1.1.129/assets/arrow-white.4e66b9c.png);
-          background-repeat: no-repeat;
-          background-size: contain;
-          margin: 0 0.5rem;
-          vertical-align: middle;
-          position: relative;
-          top: -0.1rem;
-        }
-      }
-    }
-  }
-
-  .td1,
-  .td2 {
-    width: auto;
-    background-color: #f5f6f7;
-    color: #4d5054;
-    font-weight: 700;
-  }
-
-  .td2:last-child {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-  }
+.el-table__row--level-0 td:first-child {
+  background-color: #00bec9 !important;
+  color: #fff;
+  font-weight: 700;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+.el-table__row--level-0 td {
+  background: #f5f6f7;
+  background-clip: content-box;
+  color: #4d5054;
+  font-weight: 700;
+}
+.el-table__row--level-0 td:last-child {
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+.el-table__row--level-1 .td:first-child {
+  color: #00bec9;
+  background: #f4f5f6;
+  font-weight: 700;
 }
 </style>

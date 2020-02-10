@@ -3,18 +3,24 @@
     <div class="icon">
       <img src="http://fs.yqfw.cdyoue.com/FlC0PoDMaq2GNGrP2IzDzlUBOvVw" alt />
       <span class="city">
-        <span>全国</span>
+        <span>柳州</span>
         <i class="xsj"></i>
       </span>
     </div>
     <h3 class="h3">新型冠状病毒肺炎</h3>
     <h1 class="h1">疫情实时大数据报告</h1>
-    <div class="visit">共 1,732,801,322 人次已浏览</div>
+    <div class="visit">共 {{msg}} 人次已浏览</div>
   </header>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      msg: '1,989,496,307'
+    }
+  }
+}
 </script>
 
 <style lang="less" scoped>
