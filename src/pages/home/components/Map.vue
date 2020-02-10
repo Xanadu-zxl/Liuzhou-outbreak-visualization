@@ -1,115 +1,193 @@
 <template>
-  <div>
-    <div class="virus-map">
-      <v-chart :options="mapOptions" />
+  <div class="map-wrapper">
+    <div class="map-legend">
+      <div class="legend-item" v-for="(item, index) in mapRange" :key="index">
+        <span class="legend-item-color" :style="{backgroundColor: item.color}"></span>
+        <span class="legend-item-text">{{generateRangeText(item)}}</span>
+      </div>
     </div>
+    <base-map
+      ref="mapRef"
+      :map-options="mapOptions"
+      features="none"
+      :map-style="mapStyle"
+    >
+      <regions
+        ref="regionsRef"
+        :areas="areas"
+        :groups="groups"
+        :areaHoverStyle="areaHoverStyle"
+        @area-clicked="areaClickFunc"
+      />
+      <info-window
+        ref="infowindowRef"
+        :options="{
+          closeWhenClickMap: true,
+          isCustom: true
+        }"
+      />
+    </base-map>
   </div>
+
 </template>
 
 <script>
-import Echarts from 'vue-echarts'
-import 'echarts/lib/chart/map'
-import 'echarts/lib/component/tooltip'
-import 'echarts/lib/component/visualMap'
+import _ from 'lodash'
+import {
+  BaseMap,
+  Regions,
+  InfoWindow,
+} from '@byzanteam/map-ui';
 import Liuzhou from '../../../resources/liuzhou.json'
-import Luobu from '../../../resources/luobu.json'
-import Luorong from '../../../resources/luorong.json'
 
-Echarts.registerMap('LZ', Liuzhou);
-Echarts.registerMap('LB', Luobu);
-Echarts.registerMap('LR', Luorong);
+const GROUPS = [
+  {
+    name: '雒容镇',
+    codes: [1],
+    center: [109.603274, 24.398684],
+    style: {
+      fillOpacity: 0.8,
+      strokeColor: '#ffffff',
+      strokeWeight: 1,
+    }
+  },
+  {
+    name: '洛埠镇',
+    codes: [2],
+    center: [109.513237,24.430415],
+    style: {
+      fillOpacity: 0.8,
+      strokeColor: '#ffffff',
+      strokeWeight: 1,
+    }
+  }
+]
+
 export default {
   components: {
-    'v-chart': Echarts
+    BaseMap,
+    Regions,
+    InfoWindow,
   },
 
   data() {
     return {
+      areas: Liuzhou.features,
+      mapStyle: 'amap://styles/cca20692c7b4da0b930eadd919d5a3fb',
       mapOptions: {
-        tooltip: {
-          trigger: 'item',
-          formatter: '{b}<br/>{c}'
-        },
-        toolbox: {
-          show: true,
-          orient: 'vertical',
-          left: 'right',
-          top: 'center',
-          feature: {
-            dataView: {readOnly: false},
-            restore: {},
-            saveAsImage: {}
-          }
-        },
-        visualMap: {
-          min: 1,
-          max: 20,
-          pieces: [
-            {min: 10000},
-            {min: 1000, max: 9999},
-            {min: 100, max: 999},
-            {min: 10, max: 99},
-            {min: 1, max: 9}
-          ],
-          type: 'piecewise',
-          realtime: false,
-          calculable: true,
-          inRange: {
-            color: ['#ffaa85', '#660309']
-          }
-        },
-        series: [
-          {
-            name: '柳州',
-            type: 'map',
-            mapType: 'LZ',
-            label: {
-              show: false
-            },
-            data: [
-              {name: '三江侗族自治县', value: 0},
-              {name: '融水苗族自治县', value: 0},
-              {name: '融安县', value: 0},
-              {name: '柳城县', value: 0},
-              {name: '鹿寨县', value: 0},
-              {name: '柳北', value: 0},
-              {name: '鱼峰区', value: 0},
-              {name: '柳南区', value: 0},
-              {name: '柳江区', value: 0}
-            ]
-          },
-          {
-            name: '洛埠镇',
-            type: 'map',
-            mapType: 'LB',
-            label: {
-              show: true
-            },
-            data: [
-              {name: '洛埠镇', value: 4}
-            ]
-          },
-          {
-            name: '雒容镇',
-            type: 'map',
-            mapType: 'LR',
-            label: {
-              show: true
-            },
-            data: [
-              {name: '雒容镇', value: 12}
-            ]
-          }
-        ]
-      }
+        zoom: 10,
+        zoomEnable: false,
+        dragEnable: false,
+        resizeEnable: true,
+        center: [109.603274, 24.398684],
+      },
+      mapRange: [
+        {color: '#660309', min: 10000},
+        {color: '#8c0f0e', min: 1000, max: 9999},
+        {color: '#cc2a2a', min: 100, max: 999},
+        {color: '#ff7a69', min: 10, max: 99},
+        {color: '#ffaa85', min: 1, max: 9}
+      ],
+      counts: [
+        {name: '雒容镇', count: 3},
+        {name: '洛埠镇', count: 12}
+      ],
+      areaHoverStyle: {
+        strokeColor: '#ffffff',
+        strokeWeight: 1,
+        fillColor: '#380206',
+        strokeOpacity: 1,
+        fillOpacity: 0.1,
+      },
     }
+  },
+
+  computed: {
+    groups () {
+      return GROUPS.map((group) => {
+        const count = this.counts.find(item => item.name === group.name)
+        const currentStyle = _.findLast(
+          _.sortBy(this.mapRange, 'min'),
+          ({ min }) => count.count >= min
+        );
+        group.count = count.count
+        group.style.fillColor = currentStyle.color
+        return group
+      })
+    }
+  },
+
+  methods: {
+    areaClickFunc (json, area, vm) {
+      const content = `<div class='info-container'>
+        <div class="info-title">${json.properties.group.name}</div>
+        <div class="info-title">${json.properties.group.count}</div>
+      </div>`
+      this.$refs.infowindowRef.createInfoWindow({content: content, location: json.properties.group.center})
+    },
+
+    generateRangeText (item) {
+      if(item.max) {
+        return `${item.min} - ${item.max}`
+      }
+      return `> ${item.min}`
+    },
   }
 }
 </script>
 
-<style lang="less" scoped>
-.echarts {
-  width: 100%;
-  height: 550px;
+<style lang="less">
+.map {
+  height: 500px;
+}
+
+.info-container {
+  background-color: rgba(31, 36, 64, .6);
+  padding: 6px 8px;
+  color: #ffffff;
+  font-size: 14px;
+  border-radius: 4px;
+  box-shadow: 0 .1rem .1rem 0 transparentize(#000000, .86);
+  position: relative;
+}
+
+.info-container::after {
+  content: "";
+  position: absolute;
+  border: .4rem solid transparent;
+  border-top-color: rgba(31, 36, 64, .6);
+  bottom: -19px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.map-wrapper {
+  position: relative;
+
+  .map-legend {
+    position: absolute;
+    bottom: 0;
+    height: 120px;
+    width: 200px;
+    left: 30px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+
+    .legend-item-color {
+      width: 15px;
+      height: 10px;
+      border-radius: 2px;
+      background-color: #ffaa85;
+    }
+
+    .legend-item-text {
+      color: #333333;
+      font-size: 12px;
+      margin-left: 10px;
+    }
+  }
 }
 </style>
