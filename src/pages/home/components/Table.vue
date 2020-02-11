@@ -13,9 +13,7 @@
             class="el-table"
             :data="tableData"
             style="width: 100%"
-            lazy
             stripe
-            :load="load"
             row-key="id"
             :tree-props="{children: 'children', hasChildren: 'hasChildren'}"
           >
