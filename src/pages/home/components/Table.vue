@@ -132,7 +132,12 @@ export default {
 
 .el-table th,
 .el-table td {
-  padding: 1px;
+  padding: 0 1px;
+}
+
+.el-table td.is-left .cell {
+  height: 42px;
+  line-height: 42px;
 }
 
 .is-center .cell {
