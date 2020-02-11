@@ -28,7 +28,8 @@ body {
 }
 
 #app {
-  width: 768px;
+  width: 92%;
+  max-width: 38rem;
   margin: 0 auto;
 }
 </style>

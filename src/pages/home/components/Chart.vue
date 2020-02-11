@@ -15,6 +15,7 @@
 import Echarts from 'vue-echarts'
 import 'echarts/lib/chart/bar'
 import 'echarts/lib/component/tooltip'
+import 'echarts/lib/component/legend'
 
 export default {
   components: {
@@ -27,18 +28,22 @@ export default {
         tooltip: {
           trigger: 'axis'
         },
+        grid: {
+          bottom: 100
+        },
         legend: {
+          width: '80%',
           show: true,
           data: ['重点人群管控总数', '来自武汉市的市外人员', '来自湖北省（除武汉市）的市外人员', '我市到过武汉市的人员', '我市到过湖北省（除武汉市）的人员', '密切接触者', '我市仍在湖北省出差、休假、旅游、探亲等短时间停留人员'],
-          bottom: '10px'
+          bottom: '10rem'
         },
-        color: ['#ffaa85', '#d98066', '#b35747', '#8b2e29', '#66050b', '#380206'],
+        color: ['#39aabb', '#955e42', '#bb3939', '#cecccc', '#cde7b0', '#918b84'],
         xAxis: [{
           type: 'category',
           axisLabel: {
             interval: 0,
             color: '#333333',
-            fontSize: '9px'
+            fontSize: '9rem'
           },
           data: ['01.28', '01.29', '01.30', '01.31', '02.01', '02.02'],
           axisLine: {show: false},
@@ -58,10 +63,10 @@ export default {
           name: '个',
           nameTextStyle: {
             color: '#333333',
-            fontSize: '9px'
+            fontSize: '9rem'
           },
           axisLabel: {color: '#333333',
-            fontSize: '9px'
+            fontSize: '9rem'
           },
           axisLine: {show: false},
           axisTick: {show: false},
@@ -74,13 +79,6 @@ export default {
           }
         }],
         series: [
-          {
-            type: 'bar',
-            name: '重点人群管控总数',
-            stack: '人群',
-            barWidth: '15',
-            data: [10, 20, 34, 41, 42, 30]
-          },
           {
             type: 'bar',
             name: '来自武汉市的市外人员',
@@ -142,7 +140,7 @@ export default {
     width: .4rem;
     height: .4rem;
     border-radius: 50%;
-    border: .15rem solid red;
+    border: .2rem solid #39aabb;
     margin-right: .5rem;
   }
 
@@ -155,6 +153,6 @@ export default {
 
 .echarts {
   width: 100%;
-  height: 550px;
+  height: 27.5rem;
 }
 </style>

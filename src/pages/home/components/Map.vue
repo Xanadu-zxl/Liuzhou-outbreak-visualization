@@ -95,11 +95,10 @@ export default {
       },
       selectedArea: '',
       mapRange: [
-        {color: '#660309', min: 10000},
-        {color: '#8c0f0e', min: 1000, max: 9999},
-        {color: '#cc2a2a', min: 100, max: 999},
-        {color: '#ff7a69', min: 10, max: 99},
-        {color: '#ffaa85', min: 1, max: 9}
+        {color: '#bb3939', min: 1000},
+        {color: '#e16f5d', min: 100, max: 999},
+        {color: '#f9e2e5', min: 10, max: 99},
+        {color: '#f9e4c0', min: 1, max: 9}
       ],
       counts: [
         {name: '雒容镇', a: 3, b: 2, c: 4, d: 6, e: 5, f: 7, g: 4},
@@ -154,7 +153,6 @@ export default {
       if (this.selectedArea) {
         const content = `<div class='info-container'>
         <div class="info-name">${json.properties.group.name}</div>
-          <div class="info-title">重点人群管控总数: ${json.properties.group.a}</div>
           <div class="info-title">来自武汉市的市外人员: ${json.properties.group.b}</div>
           <div class="info-title">来自湖北省（除武汉市）的市外人员: ${json.properties.group.c}</div>
           <div class="info-title">我市到过武汉市的人员: ${json.properties.group.d}</div>
@@ -180,7 +178,7 @@ export default {
 
 <style lang="less">
 .map {
-  height: 500px;
+  height: 25rem;
 }
 
 .amap-marker {
@@ -188,19 +186,19 @@ export default {
 }
 
 .amap-info {
-  width: 500px;
+  width: 25rem;
 }
 
 .amap-overlay-text-container {
-  font-size: 10px !important;
+  font-size: .5rem !important;
 }
 
 .info-container {
-  background-color: rgba(31, 36, 64, .6);
-  padding: 6px 8px;
+  background-color: rgba(50, 50, 50, 0.7);
+  padding: .3rem .4rem;
   color: #ffffff;
-  font-size: 14px;
-  border-radius: 4px;
+  font-size: .7rem;
+  border-radius: .2rem;
   box-shadow: 0 .1rem .1rem 0 transparentize(#000000, .86);
   position: relative;
 }
@@ -209,8 +207,8 @@ export default {
   content: "";
   position: absolute;
   border: .4rem solid transparent;
-  border-top-color: rgba(31, 36, 64, .6);
-  bottom: -19px;
+  border-top-color: rgba(50, 50, 50, 0.7);
+  bottom: -1.2rem;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -228,10 +226,10 @@ export default {
     }
 
     .map-title-badge {
-      width: .2rem;
+      width: .25rem;
       height: .6rem;
-      background-color: red;
-      border-radius: .15rem;
+      background-color: #39aabb;
+      border-radius: .3rem;
       margin-right: .5rem;
     }
 
@@ -245,8 +243,8 @@ export default {
   .map-legend {
     position: absolute;
     bottom: 0;
-    height: 120px;
-    right: 10px;
+    height: 6rem;
+    right: .5rem;
   }
 
   .legend-item {
@@ -254,16 +252,16 @@ export default {
     align-items: center;
 
     .legend-item-color {
-      width: 15px;
-      height: 10px;
-      border-radius: 2px;
+      width: .75rem;
+      height: .5rem;
+      border-radius: .1rem;
       background-color: #ffaa85;
     }
 
     .legend-item-text {
-      color: #333333;
-      font-size: 12px;
-      margin-left: 10px;
+      color: #999999;
+      font-size: .5rem;
+      margin-left: .5rem;
     }
   }
 }
