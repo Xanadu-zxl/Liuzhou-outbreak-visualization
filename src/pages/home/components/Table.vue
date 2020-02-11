@@ -225,6 +225,12 @@ export default {
   padding: 1px 0px;
 }
 
+.el-table td.is-left .cell {
+  height: 42px;
+  line-height: 42px;
+
+}
+
 .is-center .cell {
   border-spacing: 2px 6px;
   font-size: 0.938rem;
