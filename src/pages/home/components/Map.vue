@@ -87,11 +87,11 @@ export default {
       areas: Liuzhou.features,
       mapStyle: 'amap://styles/cca20692c7b4da0b930eadd919d5a3fb',
       mapOptions: {
-        zoom: 10,
+        zoom: 11,
         zoomEnable: false,
         dragEnable: false,
         resizeEnable: true,
-        center: [109.603274, 24.398684]
+        center: [109.603274, 24.420004]
       },
       selectedArea: '',
       mapRange: [
