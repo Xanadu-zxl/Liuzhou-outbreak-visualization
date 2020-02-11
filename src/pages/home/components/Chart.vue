@@ -27,16 +27,20 @@ export default {
         tooltip: {
           trigger: 'axis'
         },
+        legend: {
+          show: true,
+          data: ['重点人群管控总数', '来自武汉市的市外人员', '来自湖北省（除武汉市）的市外人员', '我市到过武汉市的人员', '我市到过湖北省（除武汉市）的人员', '密切接触者', '我市仍在湖北省出差、休假、旅游、探亲等短时间停留人员'],
+          bottom: '10px'
+        },
         color: ['#ffaa85', '#d98066', '#b35747', '#8b2e29', '#66050b', '#380206'],
         xAxis: [{
           type: 'category',
           axisLabel: {
-            rotate: 20,
             interval: 0,
-            color: 'rgb(174, 174, 174)',
-            fontSize: '14px'
+            color: '#333333',
+            fontSize: '9px'
           },
-          data: [1.28, 1.29, 1.30, 1.31, 2.1, 2.2],
+          data: ['01.28', '01.29', '01.30', '01.31', '02.01', '02.02'],
           axisLine: {show: false},
           axisTick: {show: false},
           splitLine: {show: false},
@@ -51,58 +55,73 @@ export default {
         yAxis: [{
           type: 'value',
           scale: true,
-          name: '件',
+          name: '个',
           nameTextStyle: {
-            color: 'rgb(174, 174, 174)'},
-          axisLabel: {color: 'rgb(174, 174, 174)',
-            fontSize: '14px'
+            color: '#333333',
+            fontSize: '9px'
+          },
+          axisLabel: {color: '#333333',
+            fontSize: '9px'
           },
           axisLine: {show: false},
           axisTick: {show: false},
-          splitLine: {show: false}
+          splitLine: {
+            show: true,
+            lineStyle: {
+              color: '#666666',
+              type: 'dotted'
+            }
+          }
         }],
         series: [
           {
             type: 'bar',
-            name: '1类人',
+            name: '重点人群管控总数',
             stack: '人群',
-            barWidth: '40',
+            barWidth: '15',
             data: [10, 20, 34, 41, 42, 30]
           },
           {
             type: 'bar',
-            name: '2类人',
+            name: '来自武汉市的市外人员',
             stack: '人群',
-            barWidth: '40',
+            barWidth: '15',
             data: [2, 10, 12, 31, 30, 12]
           },
           {
             type: 'bar',
-            name: '3类人',
+            name: '来自湖北省（除武汉市）的市外人员',
             stack: '人群',
-            barWidth: '40',
+            barWidth: '15',
             data: [12, 10, 20, 31, 30, 17]
           },
           {
             type: 'bar',
-            name: '4类人',
+            name: '我市到过武汉市的人员',
             stack: '人群',
-            barWidth: '40',
+            barWidth: '15',
             data: [2, 13, 20, 31, 30, 37]
           },
           {
             type: 'bar',
-            name: '5类人',
+            name: '我市到过湖北省（除武汉市）的人员',
             stack: '人群',
-            barWidth: '40',
+            barWidth: '15',
             data: [20, 10, 23, 31, 30, 37]
           },
           {
             type: 'bar',
-            name: '6类人',
+            name: '密切接触者',
             stack: '人群',
-            barWidth: '40',
+            barWidth: '15',
             data: [15, 10, 40, 1, 30, 60]
+          },
+          {
+            type: 'bar',
+            name: '我市仍在湖北省出差、休假、旅游、探亲等短时间停留人员',
+            stack: '人群',
+            barWidth: '15',
+            data: [15, 10, 40, 19, 30, 60]
           }
         ]
       }

@@ -246,8 +246,7 @@ export default {
     position: absolute;
     bottom: 0;
     height: 120px;
-    width: 200px;
-    left: 30px;
+    right: 10px;
   }
 
   .legend-item {
