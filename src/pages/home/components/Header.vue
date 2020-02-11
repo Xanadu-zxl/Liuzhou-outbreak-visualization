@@ -10,14 +10,50 @@
     <h3 class="h3">新型冠状病毒肺炎</h3>
     <h1 class="h1">疫情实时大数据报告</h1>
     <div class="visit">共 {{msg}} 人次已浏览</div>
+    <div class="digital-container">
+      <div class="left-card">
+        <div class="left-card-container">
+          <div class="digital-title-left">昨日<span style="color: #333333">+38人</span></div>
+          <div class="digital-content-left">{{ total }}<span class="digital-suffix-left">人</span></div>
+          <div class="digital-header-left">重点人群管控</div>
+        </div>
+      </div>
+      <div class="right-card">
+        <div class="digital-wuhan">
+          <div class="from-to">
+            <div class="digital-title-right">昨日<span style="color: #333333">+28人</span></div>
+            <div class="digital-content-right">82<span class="digital-suffix-left">人</span></div>
+            <div class="digital-header-right">来自武汉市的市外人员</div>
+          </div>
+          <div class="from-to">
+            <div class="digital-title-right">昨日<span style="color: #333333">+28人</span></div>
+            <div class="digital-content-right">82<span class="digital-suffix-left">人</span></div>
+            <div class="digital-header-right">到过武汉市的市外人员</div>
+          </div>
+         </div>
+         <div class="digital-hubei">
+           <div class="from-to">
+             <div class="digital-title-right">昨日<span style="color: #333333">+28人</span></div>
+             <div class="digital-content-right">82<span class="digital-suffix-left">人</span></div>
+             <div class="digital-header-right">来自湖北省（除武汉市）的的人员</div>
+           </div>
+           <div class="from-to">
+             <div class="digital-title-right">昨日<span style="color: #333333">+28人</span></div>
+             <div class="digital-content-right">82<span class="digital-suffix-left">人</span></div>
+             <div class="digital-header-right">到过湖北省（除武汉市）的人员</div>
+           </div>
+          </div>
+       </div>
+    </div>
   </header>
 </template>
-
 <script>
 export default {
+
   data() {
     return {
-      msg: '1,989,496,307'
+      msg: '1,989,496,307',
+      total: 1139
     }
   }
 }
@@ -30,7 +66,6 @@ export default {
   background-image: url('../../../assets/img/headerBg.png');
   background-size: contain;
   position: relative;
-
   .icon {
     width: 120px;
 
@@ -102,5 +137,84 @@ export default {
     font-size: 0.6875rem;
     color: #fff;
   }
+}
+  .digital-container {
+    max-width: 78rem;
+    display: flex;
+  }
+  .left-card {
+    background-image: linear-gradient(to right, #F1D7D3 , #FFFFFF);
+    border-radius: 0 1.4rem 1.4rem 0;
+    margin-right: 2%;
+    width: 35.9% ;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow:0 0.2rem 0.3rem #aaaaaa;
+  }
+  .left-card-container {
+    display: flex;
+    flex-flow: column;
+  }
+  .digital-content-left {
+    color: #BB3939;
+    font-size: 3rem;
+    font-weight: 600;
+  }
+  .digital-suffix-left {
+    color: #333333;
+    font-size: 1.1rem;
+    font-weight: 400;
+  }
+  .digital-header-left {
+    color:#333333;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .digital-title-left{
+    color:#666666;
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-align: left;
+  }
+  .right-card{
+    background-image: linear-gradient(to right, #FFF9ED , #FFFFFF);
+    border-radius:14px 0 0 14px;
+    width: 62.1%;
+    display: flex;
+    flex-flow: column;
+  }
+  .digital-wuhan {
+    display: flex;
+    justify-content: space-between;
+  }
+  .digital-hubei {
+    display: flex;
+    justify-content: space-between;
+  }
+  .digital-suffix-right {
+    color: #666666;
+    font-size: 11px;
+    font-weight: 400;
+  }
+  .digital-content-right {
+    color: #BB3939;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .digital-header-right {
+    color: #333333;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .digital-title-right {
+    color:#999999;
+    font-size: 9px;
+    font-weight: 400;
+    text-align: left;
+  }
+html,body{
+    font-size: 62.5%;
 }
 </style>
