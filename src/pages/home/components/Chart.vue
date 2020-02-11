@@ -1,5 +1,10 @@
 <template>
   <div>
+    <div class="chart-title">
+      <div class="chart-title-badge"></div>
+      <span>近日管控人员新增数量统计</span>
+      <span class="chart-title-unit">/个</span>
+    </div>
     <div class="virus-chart">
       <v-chart :options="epidemicTendencyOptions" />
     </div>
@@ -107,6 +112,28 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.chart-title {
+  color: #333333;
+  font-size: .75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+
+  .chart-title-badge {
+    width: .4rem;
+    height: .4rem;
+    border-radius: 50%;
+    border: .15rem solid red;
+    margin-right: .5rem;
+  }
+
+  .chart-title-unit {
+    color: #666666;
+    font-size: .45rem;
+    margin-left: 1rem;
+  }
+}
+
 .echarts {
   width: 100%;
   height: 550px;
