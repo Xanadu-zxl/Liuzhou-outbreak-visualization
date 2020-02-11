@@ -1,5 +1,11 @@
 <template>
   <div class="map-wrapper">
+    <div class="map-header">
+      <div class="map-title">
+        <span class="map-title-badge"></span>
+        <span>重点人群管控地图</span></div>
+      <div class="map-subtitle">实时数据监控</div>
+    </div>
     <div class="map-legend">
       <div class="legend-item" v-for="(item, index) in mapRange" :key="index">
         <span class="legend-item-color" :style="{backgroundColor: item.color}"></span>
@@ -211,6 +217,30 @@ export default {
 
 .map-wrapper {
   position: relative;
+
+  .map-header {
+    .map-title {
+      color: #333333;
+      font-size: .9rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+    }
+
+    .map-title-badge {
+      width: .2rem;
+      height: .6rem;
+      background-color: red;
+      border-radius: .15rem;
+      margin-right: .5rem;
+    }
+
+    .map-subtitle {
+      color: #666666;
+      font-size: .45rem;
+      padding-left: 0.7rem;
+    }
+  }
 
   .map-legend {
     position: absolute;

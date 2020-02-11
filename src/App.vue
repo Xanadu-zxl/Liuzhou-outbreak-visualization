@@ -16,6 +16,11 @@ export default {
   padding: 0px;
   text-decoration: none;
 }
+
+html {
+  font-size: 20px;
+}
+
 html,
 body {
   width: 100%;
