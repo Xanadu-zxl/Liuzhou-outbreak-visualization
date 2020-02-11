@@ -1,30 +1,34 @@
 <template>
   <div>
-    <div class="tableDate">
-      <img src="../../../assets/img/icon.png" alt />
-      <span class="span">来自国家卫健委公布的全天疫情数据</span>
-    </div>
+    <div class="table">
+      <div class="table-header">
+        <i></i>
+        <span class="span">重点管控人员表格统计</span>
+      </div>
 
-    <table class="table">
-      <el-table
-        class="el-table"
-        :data="tableData"
-        style="width: 100%"
-        lazy
-        :load="load"
-        row-key="id"
-        :tree-props="{children: 'children', hasChildren: 'hasChildren'}"
-      >
-        <el-table-column prop="cityName" label="区域" width="220" align="left" header-align="center"></el-table-column>
-        <el-table-column prop="affirm" label="来自武汉" width="70" align="center"></el-table-column>
-        <el-table-column prop="cure" label="来自湖北" width="70" align="center"></el-table-column>
-        <el-table-column prop="die" label="我市到过武汉" width="70" align="center"></el-table-column>
-        <el-table-column prop="die" label="我市到过湖北" width="70" align="center"></el-table-column>
-        <el-table-column prop="die" label="密切接触者" width="70" align="center"></el-table-column>
-        <el-table-column prop="die" label="仍在湖北人员" width="70" align="center"></el-table-column>
-        <el-table-column prop="die" label="重点人群管控总数" width="70" align="center"></el-table-column>
-      </el-table>
-    </table>
+      <table class="table-main">
+        <el-table
+          :show-header="false"
+          class="el-table"
+          :data="tableData"
+          style="width: 100%"
+          lazy
+          stripe
+          :load="load"
+          row-key="id"
+          :tree-props="{children: 'children', hasChildren: 'hasChildren'}"
+        >
+          <el-table-column
+            prop="genre"
+            label="人群类型"
+            width="600px"
+            align="left"
+            header-align="center"
+          ></el-table-column>
+          <el-table-column prop="number" label="数量" width="134px" align="center"></el-table-column>
+        </el-table>
+      </table>
+    </div>
   </div>
 </template>
 
@@ -41,98 +45,184 @@ export default {
       tableData: [
         {
           id: 1,
-          cityName: '广西',
-          affirm: '195',
-          cure: '18',
-          die: '1',
+          genre: '柳东新区',
+          number: '0',
           children: [
             {
               id: 11,
-              cityName: '柳州',
-              affirm: '195',
-              cure: '18',
-              die: '1'
+              genre: '人群类型',
+              number: '数量'
             },
             {
               id: 12,
-              cityName: '柳州',
-              affirm: '195',
-              cure: '18',
-              die: '1'
+              genre: '重点人群管控总数',
+              number: '478'
+            },
+            {
+              id: 13,
+              genre: '来自武汉市的市外人',
+              number: '82'
+            },
+            {
+              id: 14,
+              genre: '来自湖北省（除武汉市）的市外人员',
+              number: '38'
+            },
+            {
+              id: 15,
+              genre: '到过武汉市的人员',
+              number: '76'
+            },
+            {
+              id: 16,
+              genre: '密切接触者',
+              number: '102'
+            },
+            {
+              id: 17,
+              genre: '仍在湖北省出差、休假、旅游、谈情等短时间停留人员',
+              number: '88'
             }
           ]
         },
         {
           id: 2,
-          cityName: '广西',
-          affirm: '195',
-          cure: '18',
-          die: '1',
+          genre: '雒容镇',
+          number: '0',
           children: [
             {
               id: 21,
-              cityName: '柳州',
-              affirm: '195',
-              cure: '18',
-              die: '1'
+              genre: '人群类型',
+              number: '数量'
+            },
+            {
+              id: 22,
+              genre: '重点人群管控总数',
+              number: '478'
+            },
+            {
+              id: 23,
+              genre: '来自武汉市的市外人',
+              number: '82'
+            },
+            {
+              id: 24,
+              genre: '来自湖北省（除武汉市）的市外人员',
+              number: '38'
+            },
+            {
+              id: 25,
+              genre: '到过武汉市的人员',
+              number: '76'
+            },
+            {
+              id: 26,
+              genre: '密切接触者',
+              number: '102'
+            },
+            {
+              id: 27,
+              genre: '仍在湖北省出差、休假、旅游、谈情等短时间停留人员',
+              number: '88'
+            }
+          ]
+        },
+        {
+          id: 3,
+          genre: '洛埠镇',
+          number: '0',
+          children: [
+            {
+              id: 31,
+              genre: '人群类型',
+              number: '数量'
+            },
+            {
+              id: 32,
+              genre: '重点人群管控总数',
+              number: '478'
+            },
+            {
+              id: 33,
+              genre: '来自武汉市的市外人',
+              number: '83'
+            },
+            {
+              id: 34,
+              genre: '来自湖北省（除武汉市）的市外人员',
+              number: '38'
+            },
+            {
+              id: 35,
+              genre: '到过武汉市的人员',
+              number: '76'
+            },
+            {
+              id: 36,
+              genre: '密切接触者',
+              number: '303'
+            },
+            {
+              id: 37,
+              genre: '仍在湖北省出差、休假、旅游、谈情等短时间停留人员',
+              number: '88'
             }
           ]
         }
       ]
-    }
-  },
-  methods: {
-    load(tree, treeNode, resolve) {
-      setTimeout(() => {
-        resolve([
-          {
-            id: 31,
-            cityName: '2016-05-01',
-            affirm: '王小虎',
-            cure: '111',
-            die: '222'
-          },
-          {
-            id: 32,
-            cityName: '2016-05-01',
-            addirm: '王小虎',
-            cure: '111',
-            die: '222'
-          }
-        ])
-      }, 1000)
     }
   }
 }
 </script>
 
 <style lang="less">
-.tableDate {
-  font-size: 0.8125rem;
-  height: 0.8125rem;
-  line-height: 0.8125rem;
+.table {
+  background: #fff;
+  border-radius: 10px;
   margin-bottom: 20px;
+  padding: 0.917rem 1.0625rem 1.875rem;
 
-  img {
-    width: 0.8125rem;
-    height: 0.8125rem;
-    display: inline-block;
+  .table-header {
+    padding: 20px 0px;
+
+    i {
+      width: 5px;
+      height: 12px;
+      margin-left: 5px;
+      border-radius: 6px;
+      display: inline-block;
+      background: #39aabb;
+    }
+
+    .span {
+      color: #333;
+      font-size: 18px;
+      font-weight: 600;
+      height: 0.8125rem;
+      padding-bottom: 5px;
+      padding-left: 0.25rem;
+      display: inline-block;
+      line-height: 0.8125rem;
+      vertical-align: middle;
+    }
   }
 
-  .span {
-    display: inline-block;
-    color: #999;
-    padding-left: 0.25rem;
-    height: 0.8125rem;
-    line-height: 0.8125rem;
-    vertical-align: middle;
-    padding-bottom: 5px;
+  .el-table {
+    width: 100%;
   }
+}
+
+.el-table .warning-row {
+  background: oldlace;
+}
+
+.el-table .success-row {
+  background: #f0f9eb;
 }
 
 .el-table th,
 .el-table td {
-  padding: 1px;
+  padding: 1px 0px;
 }
 
 .is-center .cell {
@@ -140,6 +230,7 @@ export default {
   font-size: 0.938rem;
   color: #4d5054;
   margin-top: 0.5rem;
+  line-height: 20px;
   padding-bottom: 0.5rem;
 }
 
@@ -148,9 +239,9 @@ export default {
 }
 
 .el-table__row--level-0 td:first-child {
-  background-color: #00bec9 !important;
-  color: #fff;
-  font-weight: 700;
+  color: black;
+  font-weight: 600;
+  font-size: 16px;
   border-top-left-radius: 7px;
   border-bottom-left-radius: 7px;
 }
@@ -168,5 +259,10 @@ export default {
   color: #00bec9;
   background: #f4f5f6;
   font-weight: 700;
+}
+
+.el-table td,
+.el-table th.is-leaf {
+  border: 0px;
 }
 </style>
