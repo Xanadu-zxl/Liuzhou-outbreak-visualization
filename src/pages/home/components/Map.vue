@@ -58,7 +58,7 @@ const GROUPS = [
     center: [109.603274, 24.398684],
     style: {
       fillOpacity: 0.8,
-      strokeColor: '#ffffff',
+      strokeColor: '#772631',
       strokeWeight: 1
     }
   },
@@ -68,7 +68,7 @@ const GROUPS = [
     center: [109.513237, 24.430415],
     style: {
       fillOpacity: 0.8,
-      strokeColor: '#ffffff',
+      strokeColor: '#772631',
       strokeWeight: 1
     }
   }
@@ -91,7 +91,7 @@ export default {
         zoomEnable: false,
         dragEnable: false,
         resizeEnable: true,
-        center: [109.603274, 24.420004]
+        center: [109.590274, 24.420004]
       },
       selectedArea: '',
       mapRange: [
@@ -120,7 +120,7 @@ export default {
       ],
       regionLabelStyle: {
         color: '#333333',
-        'font-size': 10
+        'font-size': 12
       },
       areaHoverStyle: {
         strokeColor: '#ffffff',
@@ -155,10 +155,10 @@ export default {
         <div class="info-name">${json.properties.group.name}</div>
           <div class="info-title">来自武汉市的市外人员: ${json.properties.group.b}</div>
           <div class="info-title">来自湖北省（除武汉市）的市外人员: ${json.properties.group.c}</div>
-          <div class="info-title">我市到过武汉市的人员: ${json.properties.group.d}</div>
-          <div class="info-title">我市到过湖北省（除武汉市）的人员: ${json.properties.group.e}</div>
+          <div class="info-title">到过武汉市的人员: ${json.properties.group.d}</div>
+          <div class="info-title">到过湖北省（除武汉市）的人员: ${json.properties.group.e}</div>
           <div class="info-title">密切接触者: ${json.properties.group.f}</div>
-          <div class="info-title">我市仍在湖北省出差、休假、旅游、探亲等短时间停留人员: ${json.properties.group.g}</div>
+          <div class="info-title">仍在湖北省出差、休假、旅游、探亲等短时间停留人员: ${json.properties.group.g}</div>
         </div>`
         this.$refs.infowindowRef.createInfoWindow({content: content, location: json.properties.group.center})
       } else {
@@ -168,9 +168,9 @@ export default {
 
     generateRangeText (item) {
       if (item.max) {
-        return `${item.min} - ${item.max}`
+        return `${item.min}-${item.max}`
       }
-      return `> ${item.min}`
+      return `${item.min}人及以上`
     }
   }
 }
@@ -179,6 +179,8 @@ export default {
 <style lang="less">
 .map {
   height: 25rem;
+  margin-left: -.5rem;
+  margin-right: -.5rem;
 }
 
 .amap-marker {
@@ -215,21 +217,27 @@ export default {
 
 .map-wrapper {
   position: relative;
+  margin-bottom: 3.25rem;
 
   .map-header {
+    margin-bottom: 1.75rem;
+
     .map-title {
       color: #333333;
       font-size: .9rem;
-      font-weight: 600;
+      font-weight: 500;
+      line-height: 1;
       display: flex;
       align-items: center;
+      margin-bottom: .3rem;
+      letter-spacing: .025rem;
     }
 
     .map-title-badge {
       width: .25rem;
       height: .6rem;
       background-color: #39aabb;
-      border-radius: .3rem;
+      border-radius: .125rem;
       margin-right: .5rem;
     }
 
@@ -237,31 +245,35 @@ export default {
       color: #666666;
       font-size: .45rem;
       padding-left: 0.7rem;
+      line-height: .55rem;
     }
   }
 
   .map-legend {
     position: absolute;
     bottom: 0;
-    height: 6rem;
-    right: .5rem;
+    right: 0;
+    z-index: 999;
+    transform: scale(0.85);
   }
 
   .legend-item {
     display: flex;
     align-items: center;
+    padding: .05rem 0;
 
     .legend-item-color {
-      width: .75rem;
-      height: .5rem;
+      width: .58rem;
+      height: .43rem;
       border-radius: .1rem;
       background-color: #ffaa85;
     }
 
     .legend-item-text {
       color: #999999;
-      font-size: .5rem;
-      margin-left: .5rem;
+      font-size: .45rem;
+      margin-left: .2rem;
+      line-height: 1;
     }
   }
 }
