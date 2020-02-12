@@ -29,14 +29,14 @@
           <div  class="from-to">
             <div class="digital-title-right">昨日<span style="color: #333333">+28人</span></div>
             <div class="digital-content-right">82<span class="digital-suffix-left">人</span></div>
-             <div class="digital-header-right">来自湖北省（除武汉市）的的人员</div>
+             <div class="digital-header-right">来自湖北省（除武汉市）的人员</div>
             </div>
          </div>
          <div v-if="cardShow"  class="digital-hubei">
            <div class="from-to">
              <div class="digital-title-right-top">昨日<span style="color: #333333">+28人</span></div>
              <div class="digital-content-right">82<span class="digital-suffix-left">人</span></div>
-             <div class="digital-header-right">到过武汉市的市外人员</div>
+             <div class="digital-header-right-top">到过武汉市的市外人员</div>
            </div>
            <div class="from-to">
              <div class="digital-title-right">昨日<span style="color: #333333">+28人</span></div>
@@ -239,10 +239,11 @@ export default {
     font-weight: 600;
   }
   .digital-header-right-top {
-    margin-bottom: 0.8rem;
+    padding-bottom: 0.4rem;
     color: #333333;
     font-size: 0.6rem;
     font-weight: 600;
+    border-bottom: 1px solid #979797;
   }
   .digital-header-right {
     color: #333333;
@@ -257,6 +258,7 @@ export default {
     text-align: left;
   }
   .digital-title-right {
+      padding-top: 0.4rem;
       color:#999999;
       font-size: 0.45rem;
       font-weight: 400;
