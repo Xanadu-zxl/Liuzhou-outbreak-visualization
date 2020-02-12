@@ -217,7 +217,7 @@ export default {
   border-radius: 0.5rem;
   margin-bottom: 1rem;
   padding: 0rem 1.0625rem 1.875rem;
-  box-shadow: 0px 2px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0.15rem rgba(0, 0, 0, 0.1);
 
   .table-header {
     padding: 1.25rem 0px 1rem;
