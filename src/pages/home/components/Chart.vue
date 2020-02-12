@@ -54,7 +54,7 @@ export default {
           axisLabel: {
             interval: 0,
             color: '#333333',
-            fontSize: '9rem'
+            fontSize: 9
           },
           data: ['01.28', '01.29', '01.30', '01.31', '02.01', '02.02', '02.03', '02.04', '02.05'],
           axisLine: {show: false},
@@ -74,10 +74,10 @@ export default {
           name: '个',
           nameTextStyle: {
             color: '#333333',
-            fontSize: '9rem'
+            fontSize: 9
           },
           axisLabel: {color: '#333333',
-            fontSize: '9rem'
+            fontSize: 9
           },
           axisLine: {show: false},
           axisTick: {show: false},
@@ -149,15 +149,15 @@ export default {
 .chart-title {
   color: #333333;
   font-size: .75rem;
-  font-weight: 600;
+  font-weight: 500;
   display: flex;
   align-items: center;
 
   .chart-title-badge {
-    width: .3rem;
-    height: .3rem;
+    width: .2rem;
+    height: .2rem;
     border-radius: 50%;
-    border: .2rem solid #39aabb;
+    border: .1rem solid #39aabb;
     margin-right: .4rem;
   }
 

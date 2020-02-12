@@ -91,7 +91,7 @@ export default {
         zoomEnable: false,
         dragEnable: false,
         resizeEnable: true,
-        center: [109.603274, 24.420004]
+        center: [109.590274, 24.420004]
       },
       selectedArea: '',
       mapRange: [
@@ -179,6 +179,8 @@ export default {
 <style lang="less">
 .map {
   height: 25rem;
+  margin-left: -1.0625rem;
+  margin-right: -1.0625rem;
 }
 
 .amap-marker {
@@ -215,12 +217,15 @@ export default {
 
 .map-wrapper {
   position: relative;
+  margin-bottom: 3.25rem;
 
   .map-header {
+    margin-bottom: 1.75rem;
+
     .map-title {
       color: #333333;
       font-size: .9rem;
-      font-weight: 600;
+      font-weight: 500;
       display: flex;
       align-items: center;
     }
@@ -244,7 +249,7 @@ export default {
     position: absolute;
     bottom: 0;
     height: 6rem;
-    right: -0.4rem;
+    right: -1rem;
     z-index: 999;
   }
 
@@ -253,16 +258,18 @@ export default {
     align-items: center;
 
     .legend-item-color {
-      width: .75rem;
-      height: .5rem;
+      width: .45rem;
+      height: .35rem;
       border-radius: .1rem;
       background-color: #ffaa85;
     }
 
     .legend-item-text {
       color: #999999;
-      font-size: .5rem;
+      font-size: .45rem;
       margin-left: .5rem;
+      transform: scale(0.85);
+      line-height: 1.4;
     }
   }
 }
