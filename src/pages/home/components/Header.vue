@@ -11,63 +11,50 @@
         <div class="swipe-text">*向右滑动显示更多</div>
         <div class="left-card">
         <div class="left-card-container">
-          <div class="digital-title-left">
-            昨日
-            <span style="color: #333333">+38</span>
-          </div>
-          <div class="digital-content-left">
-            {{ total }}
-          </div>
+          <div class="digital-title-left">昨日<span style="color: #333333;">+38</span></div>
+          <div class="digital-content-left">{{ total }}<span class="digital-suffix-left">人</span></div>
           <div class="digital-header-left">重点人群管控</div>
         </div>
       </div>
       <div class="right-card">
-          <div style="display: flex; flex-grow: 1">
-              <div id="from-wuhan" class="digital-wuhan">
-                  <div class="from-to">
-                      <div class="digital-title-right-top">
-                          昨日<span>+28</span>
-                      </div>
-                      <div class="digital-content-right">
-                          82
-                      </div>
-                      <div class="digital-header-right-top">来自武汉市的市外人员</div>
-                  </div>
-                  <div class="from-to">
-                      <div class="digital-title-right">昨日<span>+27</span></div>
-                      <div class="digital-content-right">62</div>
-                      <div class="digital-header-right">来自湖北省（除武汉市）的人员</div>
-                  </div>
-              </div>
-              <div id="to-wuhan" class="digital-wuhan">
-                  <div class="from-to">
-                      <div class="digital-title-right-top">
-                          昨日<span>+2</span>
-                      </div>
-                      <div class="digital-content-right">
-                          38
-                      </div>
-                      <div class="digital-header-right-top">我市到过武汉市的人员</div>
-                  </div>
-                  <div  class="from-to">
-                      <div class="digital-title-right">昨日<span>+12</span></div>
-                      <div class="digital-content-right">132</div>
-                      <div class="digital-header-right">我市到过湖北省（除武汉市）的人员</div>
-                  </div>
-              </div>
-              <div id="visit" class="digital-wuhan">
-                  <div class="from-to">
-                      <div class="digital-title-right-top">昨日<span>+28</span></div>
-                      <div class="digital-content-right">45</div>
-                      <div class="digital-header-right-top">密切接触者</div>
-                  </div>
-                  <div class="from-to">
-                      <div class="digital-title-right">昨日<span>+7</span></div>
-                      <div class="digital-content-right">112</div>
-                      <div class="digital-header-right">我市仍在湖北省短时间停留人员</div>
-                  </div>
-              </div>
+        <div style="display: flex; flex-grow: 1">
+          <div id="from-wuhan" class="digital-wuhan">
+            <div class="from-to">
+              <div class="digital-title-right-top">昨日<span>+28</span></div>
+              <div class="digital-content-right">82<span class="digital-suffix-right">人</span></div>
+              <div class="digital-header-right-top">来自武汉市的市外人员</div>
+            </div>
+            <div class="from-to">
+              <div class="digital-title-right">昨日<span>+27</span></div>
+              <div class="digital-content-right">62<span class="digital-suffix-right">人</span></div>
+              <div class="digital-header-right">来自湖北省（除武汉市）的人员</div>
+            </div>
           </div>
+          <div id="to-wuhan" class="digital-wuhan">
+            <div class="from-to">
+               <div class="digital-title-right-top">昨日<span>+2</span></div>
+               <div class="digital-content-right">38<span class="digital-suffix-right">人</span></div>
+                <div class="digital-header-right-top">到过武汉市的人员</div>
+            </div>
+            <div  class="from-to">
+              <div class="digital-title-right">昨日<span>+12</span></div>
+              <div class="digital-content-right">132<span class="digital-suffix-right">人</span></div>
+              <div class="digital-header-right">到过湖北省（除武汉市）的人员</div>
+            </div>
+          </div>
+          <div id="visit" class="digital-wuhan">
+            <div class="from-to">
+              <div class="digital-title-right-top">昨日<span>+28</span></div>
+              <div class="digital-content-right">45<span class="digital-suffix-right">人</span></div>
+              <div class="digital-header-right-top">密切接触者</div>
+            </div>
+            <div class="from-to">
+              <div class="digital-title-right">昨日<span>+7</span></div>
+              <div class="digital-content-right">112<span class="digital-suffix-right">人</span></div>
+              <div class="digital-header-right">仍在湖北省出差、休假、旅游、探亲人员</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -144,7 +131,8 @@ export default {
   }
     @media screen and (min-width: 900px) {
     .top-content{
-      background-size: auto 180%;
+      background-image: url("../../../assets/img/doctor.png");
+      background-size: auto 124%;
       background-position: 100% 40%;
     }
 }
@@ -179,14 +167,14 @@ export default {
     display: flex;
     flex-flow: column;
     align-items: center;
-    box-shadow:0 0.1rem 0.15rem #07767C66;
+    box-shadow:0 0.1rem 0.25rem #22528033;
   }
   .left-card-container {
     display: flex;
     flex-flow: column;
   }
   .digital-content-left {
-    line-height: 1;
+    line-height: 1.2;
     color: #BB3939;
     font-size: 1.5rem;
     font-weight: 500;
@@ -201,11 +189,11 @@ export default {
     margin-bottom: 2.3rem;
     color:#333333;
     font-size: 0.75rem;
-    font-weight: 500;
+    font-weight: 400;
   }
   .digital-title-left{
     margin-top: 2.3rem;
-    color:#666666;
+    color:#999999;
     font-size: 0.55rem;
     font-weight: 400;
     text-align: left;
@@ -216,7 +204,7 @@ export default {
     flex-grow: 1;
     display: flex;
     position: relative;
-    box-shadow:0 0.1rem 0.15rem #07767C66;
+    box-shadow:0 0.1rem 0.25rem #22528033;
     overflow-x: scroll;
   }
   .swipe-text {
@@ -244,13 +232,13 @@ export default {
     width: 11.65rem;
   }
   .digital-suffix-right {
-    color: #666666;
+    color: #999999;
     font-size: 0.55rem;
     font-weight: 400;
     margin-left: .2rem;
   }
   .digital-content-right {
-    line-height: 1;
+    line-height: 1.2;
     color: #E2951C;
     font-size: 1.2rem;
     font-weight: 500;
@@ -259,14 +247,14 @@ export default {
     padding-bottom: 0.4rem;
     color: #333333;
     font-size: 0.6rem;
-    font-weight: 500;
+    font-weight: 400;
     border-bottom: 1px solid #DEDEDE;
     white-space: nowrap;
   }
   .digital-header-right {
     color: #333333;
     font-size: 0.6rem;
-    font-weight: 600;
+    font-weight: 400;
     white-space: nowrap;
   }
   .digital-title-right-top {
