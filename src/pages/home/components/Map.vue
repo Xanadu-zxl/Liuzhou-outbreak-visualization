@@ -58,7 +58,7 @@ const GROUPS = [
     center: [109.603274, 24.398684],
     style: {
       fillOpacity: 0.8,
-      strokeColor: '#ffffff',
+      strokeColor: '#772631',
       strokeWeight: 1
     }
   },
@@ -68,7 +68,7 @@ const GROUPS = [
     center: [109.513237, 24.430415],
     style: {
       fillOpacity: 0.8,
-      strokeColor: '#ffffff',
+      strokeColor: '#772631',
       strokeWeight: 1
     }
   }
@@ -120,7 +120,7 @@ export default {
       ],
       regionLabelStyle: {
         color: '#333333',
-        'font-size': 10
+        'font-size': 12
       },
       areaHoverStyle: {
         strokeColor: '#ffffff',
@@ -245,6 +245,7 @@ export default {
     bottom: 0;
     height: 6rem;
     right: .5rem;
+    z-index: 999;
   }
 
   .legend-item {
