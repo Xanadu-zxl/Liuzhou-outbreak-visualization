@@ -13,9 +13,7 @@
             class="el-table"
             :data="tableData"
             style="width: 100%"
-            lazy
             stripe
-            :load="load"
             row-key="id"
             :tree-props="{children: 'children', hasChildren: 'hasChildren'}"
           >
@@ -179,6 +177,8 @@ export default {
 
 <style lang="less">
 .table {
+  margin-left: 4%;
+  margin-right: 4%;
   background: #fff;
   border-radius: 0.5rem;
   margin-bottom: 1rem;

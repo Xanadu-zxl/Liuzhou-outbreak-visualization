@@ -28,7 +28,7 @@ export default {
 .section {
   background-color: #fff;
   border-radius: 0.625rem;
-  margin: 1rem 0 1.5rem;
+  margin: 1rem 4% 1.5rem;
   padding: 0.917rem 1.0625rem 1.875rem;
 }
 </style>
