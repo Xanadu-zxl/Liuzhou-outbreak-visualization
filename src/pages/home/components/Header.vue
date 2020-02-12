@@ -34,37 +34,37 @@
                       <div class="digital-header-right-top">来自武汉市的市外人员</div>
                   </div>
                   <div class="from-to">
-                      <div class="digital-title-right">昨日<span>+28</span></div>
-                      <div class="digital-content-right">82</div>
+                      <div class="digital-title-right">昨日<span>+27</span></div>
+                      <div class="digital-content-right">62</div>
                       <div class="digital-header-right">来自湖北省（除武汉市）的人员</div>
                   </div>
               </div>
               <div id="to-wuhan" class="digital-wuhan">
                   <div class="from-to">
                       <div class="digital-title-right-top">
-                          昨日<span>+28</span>
+                          昨日<span>+2</span>
                       </div>
                       <div class="digital-content-right">
-                          82
+                          38
                       </div>
-                      <div class="digital-header-right-top">来自武汉市的市外人员</div>
+                      <div class="digital-header-right-top">我市到过武汉市的人员</div>
                   </div>
                   <div  class="from-to">
-                      <div class="digital-title-right">昨日<span>+28</span></div>
-                      <div class="digital-content-right">82</div>
-                      <div class="digital-header-right">来自湖北省（除武汉市）的人员</div>
+                      <div class="digital-title-right">昨日<span>+12</span></div>
+                      <div class="digital-content-right">132</div>
+                      <div class="digital-header-right">我市到过湖北省（除武汉市）的人员</div>
                   </div>
               </div>
               <div id="visit" class="digital-wuhan">
                   <div class="from-to">
                       <div class="digital-title-right-top">昨日<span>+28</span></div>
-                      <div class="digital-content-right">82</div>
-                      <div class="digital-header-right-top">到过武汉市的市外人员</div>
+                      <div class="digital-content-right">45</div>
+                      <div class="digital-header-right-top">密切接触者</div>
                   </div>
                   <div class="from-to">
-                      <div class="digital-title-right">昨日<span>+28</span></div>
-                      <div class="digital-content-right">82</div>
-                      <div class="digital-header-right">到过湖北省（除武汉市）的人员</div>
+                      <div class="digital-title-right">昨日<span>+7</span></div>
+                      <div class="digital-content-right">112</div>
+                      <div class="digital-header-right">我市仍在湖北省短时间停留人员</div>
                   </div>
               </div>
           </div>
@@ -133,14 +133,21 @@ export default {
     }
   }
 }
+
   .top-content{
     height:9.7rem;
-    background-position: center right;
+    background-position: bottom right;
     background-repeat:no-repeat;
-    background-size: auto 9.2rem;
+    background-size: auto 100%;
     background-image: url("../../../assets/img/banner-img.png");
     padding: 0 4%;
   }
+    @media screen and (min-width: 900px) {
+    .top-content{
+      background-size: auto 180%;
+      background-position: 100% 40%;
+    }
+}
   .logo-word {
     display: flex;
     flex-flow: column;
@@ -215,25 +222,25 @@ export default {
   .swipe-text {
     position: absolute;
     z-index: 2;
-    right: 5.6%;
+    right: 0.65rem;
     top: 0.3rem;
     color:#999999;
-    font-size: 9px;
+    font-size: 9px !important;
     font-weight: 400;
     text-align: left;
   }
   .digital-wuhan {
     display: flex;
     flex-flow: column;
-    margin-left: 5.6%;
-    margin-right: 5.6%;
+    margin-left: 0.65rem;
+    margin-right: 0.65rem;
     width: 11.65rem;
   }
   .digital-hubei {
     display: flex;
     flex-flow: column;
-    margin-left: 5.6%;
-    margin-right: 5.6%;
+    margin-left: 0.65rem;
+    margin-right: 0.65rem;
     width: 11.65rem;
   }
   .digital-suffix-right {
@@ -265,14 +272,14 @@ export default {
   .digital-title-right-top {
     margin-top: 0.85rem;
     color:#999999;
-    font-size: 9px;
+    font-size: 9px !important;
     font-weight: 400;
     text-align: left;
   }
   .digital-title-right {
       padding-top: 0.4rem;
       color:#999999;
-      font-size: 9px;
+      font-size: 9px !important;
       font-weight: 400;
       text-align: left;
   }
