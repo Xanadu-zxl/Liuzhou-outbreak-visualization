@@ -6,28 +6,46 @@
         <span class="span">重点管控人员表格统计</span>
       </div>
 
-      <div class="table-container">
-        <table class="table-main">
-          <el-table
-            :show-header="false"
-            class="el-table"
-            :data="tableData"
-            style="width: 100%"
-            stripe
-            row-key="id"
-            :tree-props="{children: 'children', hasChildren: 'hasChildren'}"
-          >
-            <el-table-column
-              min-width="80%"
-              prop="genre"
-              label="人群类型"
-              align="left"
-              header-align="center"
-            ></el-table-column>
-            <el-table-column min-width="20%" prop="number" label="数量" align="center"></el-table-column>
-          </el-table>
-        </table>
-      </div>
+      <table class="table-main">
+        <el-table
+          :show-header="false"
+          class="el-table"
+          :data="tableData"
+          style="width: 100%"
+          row-key="id"
+          :tree-props="{children:
+             'children', hasChildren: 'hasChildren'}"
+        >
+          <el-table-column
+            min-width="80%"
+            prop="genre"
+            label="人群类型"
+            align="left"
+            header-align="center"
+          ></el-table-column>
+          <el-table-column min-width="20%" prop="number" label="数量" align="center"></el-table-column>
+        </el-table>
+      </table>
+      <table class="table-main2">
+        <el-table
+          :show-header="false"
+          class="el-table el-table2"
+          :data="tableData2"
+          style="width: 95%"
+          row-key="id"
+          :tree-props="{children:
+            'children', hasChildren: 'hasChildren'}"
+        >
+          <el-table-column
+            min-width="80%"
+            prop="genre"
+            label="人群类型"
+            align="left"
+            header-align="center"
+          ></el-table-column>
+          <el-table-column min-width="20%" prop="number" label="数量" align="center"></el-table-column>
+        </el-table>
+      </table>
     </div>
   </div>
 </template>
@@ -84,7 +102,9 @@ export default {
               number: '88'
             }
           ]
-        },
+        }
+      ],
+      tableData2: [
         {
           id: 2,
           genre: '雒容镇',
@@ -176,15 +196,29 @@ export default {
 </script>
 
 <style lang="less">
+.el-icon-arrow-right:before {
+  content: '\e791';
+  height: 0.4rem;
+  width: 0.4rem;
+}
+.el-table [class*='el-table__row--level'] .el-table__expand-icon {
+  display: inline-block;
+  width: 0.4rem;
+  line-height: 0.4rem;
+  height: 0.4rem;
+  text-align: center;
+  margin: 0px 0.6rem 0px 0.4rem;
+}
+
 .table {
   background: #fff;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
-  padding: 0.917rem 1.0625rem 1.875rem;
+  padding: 0rem 1.0625rem 1.875rem;
+  box-shadow: 0px 2px 2px 4px rgba(0, 0, 0, 0.1);
 
   .table-header {
-    padding: 1rem 0px;
-
+    padding: 1.25rem 0px 1rem;
     i {
       width: 0.25rem;
       height: 0.6rem;
@@ -197,34 +231,42 @@ export default {
     .span {
       color: #333;
       font-size: 0.9rem;
-      font-weight: 600;
+      font-weight: 500;
       height: 0.8125rem;
       padding-bottom: 0.25rem;
       padding-left: 0.25rem;
       display: inline-block;
       line-height: 0.8125rem;
+      letter-spacing: 0.5px;
       vertical-align: middle;
     }
   }
-  .table-container {
-    width: 100%;
+  .table-main {
     display: flex;
+    width: 100%;
   }
 
-  .table-main {
-    flex: 1;
+  .table-main2 {
+    display: flex;
+    margin-top: 0.3rem;
+    width: 100%;
   }
 }
-
 .el-table th,
 .el-table td {
   padding: 1px 0px;
 }
+.el-table::before {
+  height: 0px;
+}
 
 .el-table td.is-left .cell {
   height: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   line-height: 1rem;
-  margin: 8px 12px;
+  margin: 0.4rem 0rem;
 }
 
 .el-table__indent {
@@ -234,17 +276,90 @@ export default {
 .el-table th.is-leaf {
   border: 0px;
 }
+.el-table__row--level-0 td {
+  background: #999999;
+}
 
 .el-table__row--level-0 td:first-child {
   color: black;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 0.7rem;
 }
 .el-table__row--level-0 td {
+  font-weight: 700;
   background: #f5f6f7;
   background-clip: content-box;
-  color: #4d5054;
-  font-weight: 700;
+}
+
+.el-table {
+  .cell {
+    padding: 0px;
+  }
+  .is-center {
+    font-weight: 500;
+    color: #666666;
+  }
+  tbody tr:nth-child(1) {
+    height: 2rem;
+    .is-left {
+      border-top-left-radius: 0.2rem;
+    }
+    .is-center {
+      border-top-right-radius: 0.2rem;
+    }
+  }
+  tbody tr:nth-child(2) {
+    .is-left,
+    .is-center {
+      color: #333;
+      background: #fff;
+      font-weight: 500;
+    }
+  }
+  tbody tr:nth-child(3) {
+    .is-left,
+    .is-center {
+      background: rgba(190, 190, 190, 0.08);
+    }
+  }
+  tbody tr:nth-child(5) {
+    .is-left,
+    .is-center {
+      background: rgba(190, 190, 190, 0.08);
+    }
+  }
+  tbody tr:nth-child(7) {
+    .is-left,
+    .is-center {
+      background: rgba(190, 190, 190, 0.08);
+    }
+  }
+  tbody tr:nth-child(10) {
+    .is-left,
+    .is-center {
+      color: #333;
+      background: #fff;
+      font-weight: 500;
+    }
+  }
+  tbody tr:nth-child(11) {
+    .is-left,
+    .is-center {
+      background: rgba(190, 190, 190, 0.08);
+    }
+  }
+  tbody tr:nth-child(13) {
+    .is-left,
+    .is-center {
+      background: rgba(190, 190, 190, 0.08);
+    }
+  }
+  tbody tr:nth-child(15) {
+    .is-left,
+    .is-center {
+      background: rgba(190, 190, 190, 0.08);
+    }
+  }
 }
 
 .el-table__row--level-1 .td:first-child {
@@ -253,13 +368,33 @@ export default {
   font-weight: 700;
 }
 .el-table td.is-center {
-  font-weight: 600;
-  font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
+  font-size: 0.7rem;
 }
 
 .el-table td,
 .el-table th.is-leaf {
   border: 0px;
+}
+
+.el-table2 {
+  margin: 0px 0.9rem;
+
+  tbody tr:nth-child(1) {
+    .is-left {
+      border-top-left-radius: 0.2rem;
+    }
+    .is-center {
+      border-top-right-radius: 0.2rem;
+    }
+  }
+  tbody tr:nth-child(9) {
+    .is-left {
+      border-bottom-left-radius: 0.2rem;
+    }
+    .is-center {
+      border-bottom-right-radius: 0.2rem;
+    }
+  }
 }
 </style>
