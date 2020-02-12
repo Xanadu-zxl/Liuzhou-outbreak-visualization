@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="footer">
-      <img src="http://fs.yqfw.cdyoue.com/FlC0PoDMaq2GNGrP2IzDzlUBOvVw" alt />
+      <img src="../../../assets/img/logo.png" alt />
     </div>
   </div>
 </template>
