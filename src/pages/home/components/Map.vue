@@ -179,8 +179,8 @@ export default {
 <style lang="less">
 .map {
   height: 25rem;
-  margin-left: -1.0625rem;
-  margin-right: -1.0625rem;
+  margin-left: -.5rem;
+  margin-right: -.5rem;
 }
 
 .amap-marker {
@@ -230,13 +230,14 @@ export default {
       display: flex;
       align-items: center;
       margin-bottom: .3rem;
+      letter-spacing: .025rem;
     }
 
     .map-title-badge {
       width: .25rem;
       height: .6rem;
       background-color: #39aabb;
-      border-radius: .3rem;
+      border-radius: .125rem;
       margin-right: .5rem;
     }
 
@@ -251,8 +252,9 @@ export default {
   .map-legend {
     position: absolute;
     bottom: 0;
-    right: -1rem;
+    right: 0;
     z-index: 999;
+    transform: scale(0.85);
   }
 
   .legend-item {
@@ -261,8 +263,8 @@ export default {
     padding: .05rem 0;
 
     .legend-item-color {
-      width: .45rem;
-      height: .35rem;
+      width: .58rem;
+      height: .43rem;
       border-radius: .1rem;
       background-color: #ffaa85;
     }
@@ -270,8 +272,7 @@ export default {
     .legend-item-text {
       color: #999999;
       font-size: .45rem;
-      margin-left: .1rem;
-      transform: scale(0.85);
+      margin-left: .2rem;
       line-height: 1;
     }
   }

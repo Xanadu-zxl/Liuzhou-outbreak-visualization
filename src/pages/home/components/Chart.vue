@@ -28,14 +28,13 @@ export default {
         tooltip: {
           trigger: 'axis',
           backgroundColor: 'rgba(114, 150, 176, .9)',
-          textStyle: {
-            fontSize: 9
-          }
+          formatter: this.tooltipFormatterFunc
         },
         grid: {
           width: '90%',
           bottom: 60,
-          top: 10
+          top: 10,
+          right: 0
         },
         legend: {
           show: true,
@@ -66,7 +65,7 @@ export default {
             label: {
               show: false
             },
-            lineStyle: {color: 'rgba(215, 215, 217)', type: 'dotted'}
+            lineStyle: {color: '#666666', type: 'dotted'}
           }
         }],
         yAxis: [{
@@ -140,7 +139,17 @@ export default {
 
   mounted () {
     if (document.body.clientWidth <= 375) {
-      this.epidemicTendencyOptions.grid.bottom = 90
+      this.epidemicTendencyOptions.grid.bottom = 70
+    }
+  },
+
+  methods: {
+    tooltipFormatterFunc (params) {
+      const str = `<div style='font-size: 9px; line-height: 1.4;'>${params[0].name}</div>`
+      const arr = params.map((item) => {
+        return `<div style='display: flex; justify-content: flex-start; align-items: center;'><div style='background-color: ${item.color}; width: 9px; height: 7px; border-radius: 2px; margin-right: 6px;'></div><div style='font-size: 9px; line-height: 1.4'>${item.seriesName}: ${item.value}</div></div>`
+      })
+      return str + arr.join('')
     }
   }
 }
@@ -154,6 +163,7 @@ export default {
   display: flex;
   align-items: center;
   margin-bottom: .75rem;
+  letter-spacing: .025rem;
 
   .chart-title-badge {
     width: .2rem;
@@ -172,6 +182,6 @@ export default {
 
 .echarts {
   width: 100%;
-  height: 16rem;
+  height: 11.5rem;
 }
 </style>
