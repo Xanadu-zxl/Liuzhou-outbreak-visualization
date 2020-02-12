@@ -26,16 +26,27 @@ export default {
     return {
       epidemicTendencyOptions: {
         tooltip: {
-          trigger: 'axis'
+          trigger: 'axis',
+          backgroundColor: 'rgba(114, 150, 176, .9)',
+          textStyle: {
+            fontSize: 9
+          }
         },
         grid: {
           width: '90%',
-          bottom: 100
+          bottom: 60
         },
         legend: {
           show: true,
-          data: ['重点人群管控总数', '来自武汉市的市外人员', '来自湖北省（除武汉市）的市外人员', '我市到过武汉市的人员', '我市到过湖北省（除武汉市）的人员', '密切接触者', '我市仍在湖北省出差、休假、旅游、探亲等短时间停留人员'],
-          bottom: '10rem'
+          data: ['重点人群管控总数', '来自武汉市的市外人员', '来自湖北省（除武汉市）的市外人员', '到过武汉市的人员', '到过湖北省（除武汉市）的人员', '密切接触者', '仍在湖北省出差、休假、旅游、探亲等短时间停留人员'],
+          bottom: 0,
+          textStyle: {
+            color: '#999999',
+            fontSize: '9px'
+          },
+          itemGap: 5,
+          itemWidth: 9,
+          itemHeight: 7
         },
         color: ['#39aabb', '#955e42', '#bb3939', '#cecccc', '#cde7b0', '#918b84'],
         xAxis: [{
@@ -83,42 +94,42 @@ export default {
             type: 'bar',
             name: '来自武汉市的市外人员',
             stack: '人群',
-            barWidth: '10',
+            barWidth: '5',
             data: [2, 10, 12, 31, 30, 12, 12, 3, 9]
           },
           {
             type: 'bar',
             name: '来自湖北省（除武汉市）的市外人员',
             stack: '人群',
-            barWidth: '10',
+            barWidth: '5',
             data: [12, 10, 20, 31, 30, 17, 12, 3, 9]
           },
           {
             type: 'bar',
-            name: '我市到过武汉市的人员',
+            name: '到过武汉市的人员',
             stack: '人群',
-            barWidth: '10',
+            barWidth: '5',
             data: [2, 13, 20, 31, 30, 37, 12, 3, 9]
           },
           {
             type: 'bar',
-            name: '我市到过湖北省（除武汉市）的人员',
+            name: '到过湖北省（除武汉市）的人员',
             stack: '人群',
-            barWidth: '10',
+            barWidth: '5',
             data: [20, 10, 23, 31, 30, 37, 12, 3, 9]
           },
           {
             type: 'bar',
             name: '密切接触者',
             stack: '人群',
-            barWidth: '10',
+            barWidth: '5',
             data: [15, 10, 40, 1, 30, 60, 12, 3, 9]
           },
           {
             type: 'bar',
-            name: '我市仍在湖北省出差、休假、旅游、探亲等短时间停留人员',
+            name: '仍在湖北省出差、休假、旅游、探亲等短时间停留人员',
             stack: '人群',
-            barWidth: '10',
+            barWidth: '5',
             data: [15, 10, 40, 19, 30, 60, 12, 3, 9]
           }
         ]
@@ -128,7 +139,7 @@ export default {
 
   mounted () {
     if (document.body.clientWidth <= 375) {
-      this.epidemicTendencyOptions.grid.bottom = 180
+      this.epidemicTendencyOptions.grid.bottom = 90
     }
   }
 }
@@ -143,22 +154,22 @@ export default {
   align-items: center;
 
   .chart-title-badge {
-    width: .4rem;
-    height: .4rem;
+    width: .3rem;
+    height: .3rem;
     border-radius: 50%;
     border: .2rem solid #39aabb;
-    margin-right: .5rem;
+    margin-right: .4rem;
   }
 
   .chart-title-unit {
     color: #666666;
     font-size: .45rem;
-    margin-left: 1rem;
+    margin-left: 0.2rem;
   }
 }
 
 .echarts {
   width: 100%;
-  height: 27.5rem;
+  height: 16rem;
 }
 </style>

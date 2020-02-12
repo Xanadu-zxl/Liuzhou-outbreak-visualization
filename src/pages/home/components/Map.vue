@@ -155,10 +155,10 @@ export default {
         <div class="info-name">${json.properties.group.name}</div>
           <div class="info-title">来自武汉市的市外人员: ${json.properties.group.b}</div>
           <div class="info-title">来自湖北省（除武汉市）的市外人员: ${json.properties.group.c}</div>
-          <div class="info-title">我市到过武汉市的人员: ${json.properties.group.d}</div>
-          <div class="info-title">我市到过湖北省（除武汉市）的人员: ${json.properties.group.e}</div>
+          <div class="info-title">到过武汉市的人员: ${json.properties.group.d}</div>
+          <div class="info-title">到过湖北省（除武汉市）的人员: ${json.properties.group.e}</div>
           <div class="info-title">密切接触者: ${json.properties.group.f}</div>
-          <div class="info-title">我市仍在湖北省出差、休假、旅游、探亲等短时间停留人员: ${json.properties.group.g}</div>
+          <div class="info-title">仍在湖北省出差、休假、旅游、探亲等短时间停留人员: ${json.properties.group.g}</div>
         </div>`
         this.$refs.infowindowRef.createInfoWindow({content: content, location: json.properties.group.center})
       } else {
@@ -244,7 +244,7 @@ export default {
     position: absolute;
     bottom: 0;
     height: 6rem;
-    right: .5rem;
+    right: -0.4rem;
     z-index: 999;
   }
 
