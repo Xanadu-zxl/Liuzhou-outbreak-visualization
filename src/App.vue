@@ -24,11 +24,10 @@ html {
 html,
 body {
   width: 100%;
-  background: #10aeb5;
+  background: #DBEEFC linear-gradient(to bottom, #1A4C7B 0%, #DBEEFC 28.8%);
 }
 
 #app {
-  width: 92%;
   max-width: 38rem;
   margin: 0 auto;
 }

@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@byzanteam/map-ui": "../map-ui",
-    "@byzanteam/vis-components": "../../vis-components",
+    "@byzanteam/vis-components": "../vis-components",
     "echarts": "^4.6.0",
     "element-ui": "^2.13.0",
     "fix": "0.0.6",

@@ -211,6 +211,8 @@ export default {
 }
 
 .table {
+  margin-left: 4%;
+  margin-right: 4%;
   background: #fff;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
