@@ -214,9 +214,9 @@ export default {
   margin-left: 4%;
   margin-right: 4%;
   background: #fff;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   margin-bottom: 1rem;
-  padding: 0rem 1.0625rem 1.875rem;
+  padding: 0rem 0.5rem 1rem;
   box-shadow: 0 0 0.15rem rgba(0, 0, 0, 0.1);
 
   .table-header {
@@ -268,7 +268,7 @@ export default {
   text-overflow: ellipsis;
   white-space: nowrap;
   line-height: 1rem;
-  margin: 0.4rem 0rem;
+  margin: 0.5rem 0rem;
 }
 
 .el-table__indent {
