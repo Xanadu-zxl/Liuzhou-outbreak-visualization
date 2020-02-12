@@ -34,7 +34,8 @@ export default {
         },
         grid: {
           width: '90%',
-          bottom: 60
+          bottom: 60,
+          top: 10
         },
         legend: {
           show: true,
@@ -152,6 +153,7 @@ export default {
   font-weight: 500;
   display: flex;
   align-items: center;
+  margin-bottom: .75rem;
 
   .chart-title-badge {
     width: .2rem;

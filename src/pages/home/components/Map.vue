@@ -168,9 +168,9 @@ export default {
 
     generateRangeText (item) {
       if (item.max) {
-        return `${item.min} - ${item.max}`
+        return `${item.min}-${item.max}`
       }
-      return `> ${item.min}`
+      return `${item.min}人及以上`
     }
   }
 }
@@ -226,8 +226,10 @@ export default {
       color: #333333;
       font-size: .9rem;
       font-weight: 500;
+      line-height: 1;
       display: flex;
       align-items: center;
+      margin-bottom: .3rem;
     }
 
     .map-title-badge {
@@ -242,13 +244,13 @@ export default {
       color: #666666;
       font-size: .45rem;
       padding-left: 0.7rem;
+      line-height: .55rem;
     }
   }
 
   .map-legend {
     position: absolute;
     bottom: 0;
-    height: 6rem;
     right: -1rem;
     z-index: 999;
   }
@@ -256,6 +258,7 @@ export default {
   .legend-item {
     display: flex;
     align-items: center;
+    padding: .05rem 0;
 
     .legend-item-color {
       width: .45rem;
@@ -267,9 +270,9 @@ export default {
     .legend-item-text {
       color: #999999;
       font-size: .45rem;
-      margin-left: .5rem;
+      margin-left: .1rem;
       transform: scale(0.85);
-      line-height: 1.4;
+      line-height: 1;
     }
   }
 }
