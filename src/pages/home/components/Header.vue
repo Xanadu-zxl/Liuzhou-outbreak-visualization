@@ -160,7 +160,7 @@ export default {
   }
   .left-card {
     background-image: linear-gradient(to right, #F1D7D3 , #FFFFFF);
-    border-radius: 0 0.7rem 0.7rem 0;
+    border-radius: 0 0.35rem 0.35rem 0;
     margin-right: 2%;
     width: 35.9% ;
     min-width: 135px;
@@ -190,6 +190,7 @@ export default {
     color:#333333;
     font-size: 0.75rem;
     font-weight: 400;
+    letter-spacing: .025rem;
   }
   .digital-title-left{
     margin-top: 2.3rem;
@@ -200,7 +201,7 @@ export default {
   }
   .right-card{
     background-image: linear-gradient(to right, #FFF9ED , #FFFFFF);
-    border-radius:0.7rem 0 0 0.7rem;
+    border-radius:0.35rem 0 0 0.35rem;
     flex-grow: 1;
     display: flex;
     position: relative;
@@ -250,12 +251,14 @@ export default {
     font-weight: 400;
     border-bottom: 1px solid #DEDEDE;
     white-space: nowrap;
+    letter-spacing: .025rem;
   }
   .digital-header-right {
     color: #333333;
     font-size: 0.6rem;
     font-weight: 400;
     white-space: nowrap;
+    letter-spacing: .025rem;
   }
   .digital-title-right-top {
     margin-top: 0.85rem;
