@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div class="msg">了解最新进展及权威预防知识</div>
+    <div class="footer">
+      <img src="http://fs.yqfw.cdyoue.com/FlC0PoDMaq2GNGrP2IzDzlUBOvVw" alt />
+    </div>
   </div>
 </template>
 
@@ -8,12 +10,13 @@
 export default {}
 </script>
 
-<style>
-.msg {
-  opacity: 0.7;
-  color: #fff;
+<style lang="less">
+.footer {
+  width: 10rem;
   text-align: center;
-  font-size: 0.875rem;
-  padding-bottom: 6.25rem;
+  margin: 1.05rem auto;
+  img {
+    width: 5.6rem;
+  }
 }
 </style>
