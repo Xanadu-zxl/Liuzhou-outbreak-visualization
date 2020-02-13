@@ -8,6 +8,7 @@
 
       <table class="table-main">
         <el-table
+          stripe
           :show-header="false"
           class="el-table"
           :data="tableData"
@@ -28,6 +29,7 @@
       </table>
       <table class="table-main2">
         <el-table
+          stripe
           :show-header="false"
           class="el-table el-table2"
           :data="tableData2"
@@ -106,44 +108,296 @@ export default {
       ],
       tableData2: [
         {
-          id: 2,
+          id: 1,
           genre: '雒容镇',
           number: '',
           children: [
             {
-              id: 21,
+              id: 11,
               genre: '人群类型',
               number: '数量'
             },
             {
-              id: 22,
+              id: 12,
               genre: '重点人群管控总数',
               number: '478'
             },
             {
-              id: 23,
+              id: 13,
               genre: '来自武汉市的市外人',
-              number: '82'
+              number: '81'
             },
             {
-              id: 24,
+              id: 14,
               genre: '来自湖北省（除武汉市）的市外人员',
               number: '38'
             },
             {
-              id: 25,
+              id: 15,
               genre: '到过武汉市的人员',
               number: '76'
             },
             {
-              id: 26,
+              id: 16,
               genre: '密切接触者',
-              number: '102'
+              number: '101'
             },
             {
-              id: 27,
+              id: 17,
               genre: '仍在湖北省出差、休假、旅游、谈情等短时间停留人员',
               number: '88'
+            },
+            {
+              id: 18,
+              genre: '洛埠街社区',
+              number: '',
+              children: [
+                {
+                  id: 181,
+                  genre: '人群类型',
+                  number: '数量'
+                },
+                {
+                  id: 182,
+                  genre: '重点人群管控总数',
+                  number: '478'
+                },
+                {
+                  id: 183,
+                  genre: '来自武汉市的市外人',
+                  number: '82'
+                },
+                {
+                  id: 184,
+                  genre: '来自湖北省（除武汉市）的市外人员',
+                  number: '38'
+                },
+                {
+                  id: 185,
+                  genre: '到过武汉市的人员',
+                  number: '76'
+                },
+                {
+                  id: 186,
+                  genre: '密切接触者',
+                  number: '11'
+                },
+                {
+                  id: 187,
+                  genre: '仍在湖北省出差、休假、旅游、谈情等短时间停留人员',
+                  number: '88'
+                }
+              ]
+            },
+            {
+              id: 19,
+              genre: '银欧社区',
+              number: '',
+              children: [
+                {
+                  id: 191,
+                  genre: '人群类型',
+                  number: '数量'
+                },
+                {
+                  id: 192,
+                  genre: '重点人群管控总数',
+                  number: '478'
+                },
+                {
+                  id: 193,
+                  genre: '来自武汉市的市外人',
+                  number: '82'
+                },
+                {
+                  id: 194,
+                  genre: '来自湖北省（除武汉市）的市外人员',
+                  number: '38'
+                },
+                {
+                  id: 195,
+                  genre: '到过武汉市的人员',
+                  number: '76'
+                },
+                {
+                  id: 196,
+                  genre: '密切接触者',
+                  number: '12'
+                },
+                {
+                  id: 197,
+                  genre: '仍在湖北省出差、休假、旅游、谈情等短时间停留人员',
+                  number: '88'
+                }
+              ]
+            },
+            {
+              id: 20,
+              genre: '正和社区',
+              number: '',
+              children: [
+                {
+                  id: 201,
+                  genre: '人群类型',
+                  number: '数量'
+                },
+                {
+                  id: 202,
+                  genre: '重点人群管控总数',
+                  number: '478'
+                },
+                {
+                  id: 203,
+                  genre: '来自武汉市的市外人',
+                  number: '82'
+                },
+                {
+                  id: 204,
+                  genre: '来自湖北省（除武汉市）的市外人员',
+                  number: '38'
+                },
+                {
+                  id: 205,
+                  genre: '到过武汉市的人员',
+                  number: '76'
+                },
+                {
+                  id: 206,
+                  genre: '密切接触者',
+                  number: '12'
+                },
+                {
+                  id: 207,
+                  genre: '仍在湖北省出差、休假、旅游、谈情等短时间停留人员',
+                  number: '88'
+                }
+              ]
+            },
+            {
+              id: 21,
+              genre: '洛埠村',
+              number: '',
+              children: [
+                {
+                  id: 211,
+                  genre: '人群类型',
+                  number: '数量'
+                },
+                {
+                  id: 212,
+                  genre: '重点人群管控总数',
+                  number: '478'
+                },
+                {
+                  id: 213,
+                  genre: '来自武汉市的市外人',
+                  number: '82'
+                },
+                {
+                  id: 214,
+                  genre: '来自湖北省（除武汉市）的市外人员',
+                  number: '38'
+                },
+                {
+                  id: 215,
+                  genre: '到过武汉市的人员',
+                  number: '76'
+                },
+                {
+                  id: 216,
+                  genre: '密切接触者',
+                  number: '12'
+                },
+                {
+                  id: 217,
+                  genre: '仍在湖北省出差、休假、旅游、谈情等短时间停留人员',
+                  number: '88'
+                }
+              ]
+            },
+            {
+              id: 22,
+              genre: '洛埠街社区',
+              number: '',
+              children: [
+                {
+                  id: 221,
+                  genre: '人群类型',
+                  number: '数量'
+                },
+                {
+                  id: 222,
+                  genre: '重点人群管控总数',
+                  number: '478'
+                },
+                {
+                  id: 223,
+                  genre: '来自武汉市的市外人',
+                  number: '82'
+                },
+                {
+                  id: 224,
+                  genre: '来自湖北省（除武汉市）的市外人员',
+                  number: '38'
+                },
+                {
+                  id: 225,
+                  genre: '到过武汉市的人员',
+                  number: '76'
+                },
+                {
+                  id: 226,
+                  genre: '密切接触者',
+                  number: '12'
+                },
+                {
+                  id: 227,
+                  genre: '仍在湖北省出差、休假、旅游、谈情等短时间停留人员',
+                  number: '88'
+                }
+              ]
+            },
+            {
+              id: 23,
+              genre: '下窑村',
+              number: '',
+              children: [
+                {
+                  id: 231,
+                  genre: '人群类型',
+                  number: '数量'
+                },
+                {
+                  id: 232,
+                  genre: '重点人群管控总数',
+                  number: '478'
+                },
+                {
+                  id: 233,
+                  genre: '来自武汉市的市外人',
+                  number: '82'
+                },
+                {
+                  id: 234,
+                  genre: '来自湖北省（除武汉市）的市外人员',
+                  number: '38'
+                },
+                {
+                  id: 235,
+                  genre: '到过武汉市的人员',
+                  number: '76'
+                },
+                {
+                  id: 236,
+                  genre: '密切接触者',
+                  number: '12'
+                },
+                {
+                  id: 237,
+                  genre: '仍在湖北省出差、休假、旅游、谈情等短时间停留人员',
+                  number: '88'
+                }
+              ]
             }
           ]
         },
@@ -186,6 +440,48 @@ export default {
               id: 37,
               genre: '仍在湖北省出差、休假、旅游、谈情等短时间停留人员',
               number: '88'
+            },
+            {
+              id: 38,
+              genre: '雒容社区',
+              number: '',
+              children: [
+                {
+                  id: 381,
+                  genre: '人群类型',
+                  number: '数量'
+                },
+                {
+                  id: 382,
+                  genre: '重点人群管控总数',
+                  number: '478'
+                },
+                {
+                  id: 383,
+                  genre: '来自武汉市的市外人',
+                  number: '82'
+                },
+                {
+                  id: 384,
+                  genre: '来自湖北省（除武汉市）的市外人员',
+                  number: '38'
+                },
+                {
+                  id: 385,
+                  genre: '到过武汉市的人员',
+                  number: '76'
+                },
+                {
+                  id: 386,
+                  genre: '密切接触者',
+                  number: '33'
+                },
+                {
+                  id: 387,
+                  genre: '仍在湖北省出差、休假、旅游、谈情等短时间停留人员',
+                  number: '88'
+                }
+              ]
             }
           ]
         }
@@ -196,6 +492,7 @@ export default {
 </script>
 
 <style lang="less">
+// icon
 .el-icon-arrow-right:before {
   content: '\e791';
   height: 0.4rem;
@@ -257,42 +554,42 @@ export default {
 .el-table td {
   padding: 1px 0px;
 }
+
+// 去除底边狂
 .el-table::before {
   height: 0px;
-}
-
-.el-table td.is-left .cell {
-  height: 1rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  line-height: 1rem;
-  margin: 0.5rem 0rem;
-}
-
-.el-table__indent {
-  margin-left: -1.1rem;
 }
 
 .el-table th.is-leaf {
   border: 0px;
 }
-.el-table__row--level-0 td {
-  background: #999999;
+
+.el-table td.is-left .cell {
+  height: 1rem;
+  margin: 0.5rem 0rem;
+  line-height: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.el-table__indent {
+  padding: 0px !important;
 }
 
 .el-table__row--level-0 td:first-child {
   color: black;
   font-weight: 500;
-  font-size: 0.7rem;
-}
-.el-table__row--level-0 td {
-  font-weight: 700;
-  background: #f5f6f7;
-  background-clip: content-box;
+  font-size: 0.8rem;
 }
 
+// .el-table__row--level-1 td:nth-child(1) {
+//   color: red !important;
+//   font-size: 14px !important;
+// }
 .el-table {
+  font-size: 0.7rem;
+
   .cell {
     padding: 0px;
   }
@@ -300,6 +597,24 @@ export default {
     font-weight: 500;
     color: #666666;
   }
+
+  // 三级表单字体
+  .el-table__row--level-2 td.is-left .cell,
+  .el-table__row--level-2 td.is-center .cell {
+    font-size: 0.6rem;
+    height: 20px;
+    margin: 0.375rem 0rem;
+  }
+
+  // 斑马纹
+  tr.el-table__row--striped td {
+    background: #fff !important;
+  }
+
+  .el-table__body td {
+    background: rgba(190, 190, 190, 0.08) !important;
+  }
+
   tbody tr:nth-child(1) {
     height: 2rem;
     .is-left {
@@ -317,57 +632,9 @@ export default {
       font-weight: 500;
     }
   }
-  tbody tr:nth-child(3) {
-    .is-left,
-    .is-center {
-      background: rgba(190, 190, 190, 0.08);
-    }
-  }
-  tbody tr:nth-child(5) {
-    .is-left,
-    .is-center {
-      background: rgba(190, 190, 190, 0.08);
-    }
-  }
-  tbody tr:nth-child(7) {
-    .is-left,
-    .is-center {
-      background: rgba(190, 190, 190, 0.08);
-    }
-  }
-  tbody tr:nth-child(10) {
-    .is-left,
-    .is-center {
-      color: #333;
-      background: #fff;
-      font-weight: 500;
-    }
-  }
-  tbody tr:nth-child(11) {
-    .is-left,
-    .is-center {
-      background: rgba(190, 190, 190, 0.08);
-    }
-  }
-  tbody tr:nth-child(13) {
-    .is-left,
-    .is-center {
-      background: rgba(190, 190, 190, 0.08);
-    }
-  }
-  tbody tr:nth-child(15) {
-    .is-left,
-    .is-center {
-      background: rgba(190, 190, 190, 0.08);
-    }
-  }
 }
 
-.el-table__row--level-1 .td:first-child {
-  color: #00bec9;
-  background: #f4f5f6;
-  font-weight: 700;
-}
+// size+weight
 .el-table td.is-center {
   font-weight: 500;
   font-size: 0.7rem;
@@ -388,14 +655,29 @@ export default {
     .is-center {
       border-top-right-radius: 0.2rem;
     }
+    .el-table__expand-icon {
+      font-size: 0.6rem;
+    }
   }
-  tbody tr:nth-child(9) {
+  tbody tr:nth-child(57) {
+    color: #39aabb !important;
+    display: grid;
+    margin-top: 6px;
+    margin-right: -64px;
+    border-bottom-left-radius: 34px;
     .is-left {
       border-bottom-left-radius: 0.2rem;
     }
-    .is-center {
-      border-bottom-right-radius: 0.2rem;
+    .el-table__expand-icon {
+      font-size: 0.6rem;
     }
+  }
+  // 三级表单icon+标题size
+  .el-table__row--level-1 {
+    font-size: 0.7rem;
+  }
+  .el-table__expand-icon {
+    font-size: 0.25rem;
   }
 }
 </style>
