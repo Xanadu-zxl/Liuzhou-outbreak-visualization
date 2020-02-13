@@ -201,7 +201,6 @@ export default {
   color: #ffffff;
   font-size: .7rem;
   border-radius: .2rem;
-  box-shadow: 0 .1rem .1rem 0 transparentize(#000000, .86);
   position: relative;
 }
 

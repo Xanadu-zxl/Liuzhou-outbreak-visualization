@@ -63,7 +63,7 @@
 export default {
   data() {
     return {
-      total: 1139,
+      total: 1139
     }
   }
 }
@@ -122,16 +122,16 @@ export default {
 }
 
   .top-content{
-    height:9.7rem;
+    height:10.2rem;
     background-position: bottom right;
     background-repeat:no-repeat;
     background-size: auto 100%;
-    background-image: url("../../../assets/img/banner-img.png");
+    background-image: url("../../../assets/img/banner-m.png");
     padding: 0 4%;
   }
     @media screen and (min-width: 900px) {
     .top-content{
-      background-image: url("../../../assets/img/doctor.png");
+      background-image: url("../../../assets/img/banner-pc.png");
       background-size: auto 124%;
       background-position: 100% 40%;
     }
@@ -141,11 +141,11 @@ export default {
     flex-flow: column;
   }
   .banner-bg {
-    max-height: 9.7rem;
+    max-height: 10.2rem;
   }
   .banner-word {
-    margin-top: 1.9rem;
-    max-width: 9.65rem;
+    margin-top: 2.15rem;
+    width: 9.2rem;
     max-height: 4.05rem;
   }
   .banner-logo {
@@ -159,7 +159,7 @@ export default {
     display: flex;
   }
   .left-card {
-    background-image: linear-gradient(to right, #F1D7D3 , #FFFFFF);
+    background-image: linear-gradient(to right, #F8EAE8 , #FFFFFF);
     border-radius: 0 0.35rem 0.35rem 0;
     margin-right: 2%;
     width: 35.9% ;
@@ -167,7 +167,6 @@ export default {
     display: flex;
     flex-flow: column;
     align-items: center;
-    box-shadow:0 0.1rem 0.25rem #22528033;
   }
   .left-card-container {
     display: flex;
@@ -205,7 +204,6 @@ export default {
     flex-grow: 1;
     display: flex;
     position: relative;
-    box-shadow:0 0.1rem 0.25rem #22528033;
     overflow-x: scroll;
   }
   .swipe-text {
