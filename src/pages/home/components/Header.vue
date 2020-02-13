@@ -145,7 +145,7 @@ export default {
   }
   .banner-word {
     margin-top: 2.15rem;
-    max-width: 9.65rem;
+    width: 9.2rem;
     max-height: 4.05rem;
   }
   .banner-logo {
