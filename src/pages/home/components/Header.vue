@@ -159,7 +159,7 @@ export default {
     display: flex;
   }
   .left-card {
-    background-image: linear-gradient(to right, #F1D7D3 , #FFFFFF);
+    background-image: linear-gradient(to right, #F8EAE8 , #FFFFFF);
     border-radius: 0 0.35rem 0.35rem 0;
     margin-right: 2%;
     width: 35.9% ;
