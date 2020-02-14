@@ -495,6 +495,7 @@ export default {
 // icon
 .el-icon-arrow-right:before {
   content: '\e791';
+  color: #333;
   height: 0.4rem;
   width: 0.4rem;
 }
@@ -555,7 +556,7 @@ export default {
   padding: 1px 0px;
 }
 
-// 去除底边狂
+// 去除底边框
 .el-table::before {
   height: 0px;
 }
@@ -583,17 +584,19 @@ export default {
   font-size: 0.8rem;
 }
 
-// .el-table__row--level-1 td:nth-child(1) {
-//   color: red !important;
-//   font-size: 14px !important;
-// }
+.el-table__row--level-1 td:nth-child(5) {
+  color: red !important;
+}
+
 .el-table {
+  font-weight: 500px;
   font-size: 0.7rem;
 
   .cell {
     padding: 0px;
   }
   .is-center {
+    font-size: 0.7rem;
     font-weight: 500;
     color: #666666;
   }
@@ -615,15 +618,6 @@ export default {
     background: rgba(190, 190, 190, 0.08) !important;
   }
 
-  tbody tr:nth-child(1) {
-    height: 2rem;
-    .is-left {
-      border-top-left-radius: 0.2rem;
-    }
-    .is-center {
-      border-top-right-radius: 0.2rem;
-    }
-  }
   tbody tr:nth-child(2) {
     .is-left,
     .is-center {
@@ -632,12 +626,6 @@ export default {
       font-weight: 500;
     }
   }
-}
-
-// size+weight
-.el-table td.is-center {
-  font-weight: 500;
-  font-size: 0.7rem;
 }
 
 .el-table td,
@@ -659,8 +647,82 @@ export default {
       font-size: 0.6rem;
     }
   }
+
+  // 村/社区层级
+  tbody tr:nth-child(9) {
+    background: rgba(190, 190, 190, 0.12);
+    .is-left {
+      font-size: 13px;
+      color: #333;
+    }
+  }
+  tbody tr:nth-child(10) {
+    .is-left {
+      color: #333;
+    }
+  }
+  tbody tr:nth-child(17) {
+    background: rgba(190, 190, 190, 0.12);
+    .is-left {
+      font-size: 13px;
+      color: #333;
+    }
+  }
+  tbody tr:nth-child(18) {
+    .is-left {
+      color: #333;
+    }
+  }
+  tbody tr:nth-child(25) {
+    background: rgba(190, 190, 190, 0.12);
+    .is-left {
+      font-size: 13px;
+      color: #333;
+    }
+  }
+  tbody tr:nth-child(26) {
+    .is-left {
+      color: #333;
+    }
+  }
+  tbody tr:nth-child(33) {
+    background: rgba(190, 190, 190, 0.12);
+    .is-left {
+      font-size: 13px;
+      color: #333;
+    }
+  }
+  tbody tr:nth-child(34) {
+    .is-left {
+      color: #333;
+    }
+  }
+  tbody tr:nth-child(41) {
+    background: rgba(190, 190, 190, 0.12);
+    .is-left {
+      font-size: 13px;
+      color: #333;
+    }
+  }
+  tbody tr:nth-child(42) {
+    .is-left {
+      color: #333;
+    }
+  }
+  tbody tr:nth-child(49) {
+    background: rgba(190, 190, 190, 0.12);
+    .is-left {
+      font-size: 13px;
+      color: #333;
+    }
+  }
+  tbody tr:nth-child(50) {
+    .is-left {
+      color: #333;
+    }
+  }
+
   tbody tr:nth-child(57) {
-    color: #39aabb !important;
     display: grid;
     margin-top: 6px;
     margin-right: -64px;
@@ -672,6 +734,19 @@ export default {
       font-size: 0.6rem;
     }
   }
+  tbody tr:nth-child(65) {
+    background: rgba(190, 190, 190, 0.12);
+    .is-left {
+      font-size: 13px;
+      color: #333;
+    }
+  }
+  tbody tr:nth-child(66) {
+    .is-left {
+      color: #333;
+    }
+  }
+
   // 三级表单icon+标题size
   .el-table__row--level-1 {
     font-size: 0.7rem;
