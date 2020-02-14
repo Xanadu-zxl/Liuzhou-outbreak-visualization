@@ -650,10 +650,15 @@ export default {
 
   // 村/社区层级
   tbody tr:nth-child(9) {
-    background: rgba(190, 190, 190, 0.12);
     .is-left {
+      background: rgba(190, 190, 190, 0.19) !important;
+      border-top-left-radius: 4px;
       font-size: 13px;
       color: #333;
+    }
+    .is-center {
+      background: rgba(190, 190, 190, 0.19) !important;
+      border-top-right-radius: 4px;
     }
   }
   tbody tr:nth-child(10) {
@@ -710,10 +715,15 @@ export default {
     }
   }
   tbody tr:nth-child(49) {
-    background: rgba(190, 190, 190, 0.12);
     .is-left {
+      background: rgba(190, 190, 190, 0.19) !important;
+      border-bottom-left-radius: 4px;
       font-size: 13px;
       color: #333;
+    }
+    .is-center {
+      background: rgba(190, 190, 190, 0.19) !important;
+      border-bottom-right-radius: 4px;
     }
   }
   tbody tr:nth-child(50) {
@@ -725,13 +735,19 @@ export default {
   tbody tr:nth-child(57) {
     display: grid;
     margin-top: 6px;
-    margin-right: -64px;
+    margin-right: -128px;
     border-bottom-left-radius: 34px;
     .is-left {
       border-bottom-left-radius: 0.2rem;
     }
     .el-table__expand-icon {
       font-size: 0.6rem;
+    }
+  }
+
+  tbody tr:nth-child(58) {
+    .is-left {
+      color: #333;
     }
   }
   tbody tr:nth-child(65) {
