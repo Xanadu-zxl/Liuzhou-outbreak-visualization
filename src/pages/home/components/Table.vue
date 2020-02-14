@@ -2,8 +2,10 @@
   <div>
     <div class="table">
       <div class="table-header">
-        <i></i>
-        <span class="span">重点管控人员表格统计</span>
+        <div class="table-title">
+          <span class="table-title-badge"></span>
+          <span>重点管控人员表格统计</span>
+        </div>
       </div>
 
       <table class="table-main">
@@ -518,26 +520,23 @@ export default {
 
   .table-header {
     padding: 1.25rem 0px 1rem;
-    i {
+    height: 18px;
+    .table-title-badge {
       width: 0.25rem;
       height: 0.6rem;
-      margin-left: 0.25rem;
-      border-radius: 0.3rem;
-      display: inline-block;
-      background: #39aabb;
+      background-color: #39aabb;
+      border-radius: 0.125rem;
+      margin-right: 0.5rem;
     }
-
-    .span {
-      color: #333;
+    .table-title {
+      color: #333333;
       font-size: 0.9rem;
       font-weight: 500;
-      height: 0.8125rem;
-      padding-bottom: 0.25rem;
-      padding-left: 0.25rem;
-      display: inline-block;
-      line-height: 0.8125rem;
-      letter-spacing: 0.5px;
-      vertical-align: middle;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.3rem;
+      letter-spacing: 0.025rem;
     }
   }
   .table-main {
@@ -549,6 +548,17 @@ export default {
     display: flex;
     margin-top: 0.3rem;
     width: 100%;
+  }
+  tbody tr:nth-child(1) {
+    .is-left {
+      border-top-left-radius: 0.2rem;
+    }
+    .is-center {
+      border-top-right-radius: 0.2rem;
+    }
+    .el-table__expand-icon {
+      font-size: 0.6rem;
+    }
   }
 }
 .el-table th,
@@ -662,7 +672,8 @@ export default {
     }
   }
   tbody tr:nth-child(10) {
-    .is-left {
+    .is-left,
+    .is-center {
       color: #333;
     }
   }
@@ -674,7 +685,8 @@ export default {
     }
   }
   tbody tr:nth-child(18) {
-    .is-left {
+    .is-left,
+    .is-center {
       color: #333;
     }
   }
@@ -686,7 +698,8 @@ export default {
     }
   }
   tbody tr:nth-child(26) {
-    .is-left {
+    .is-left,
+    .is-center {
       color: #333;
     }
   }
@@ -698,7 +711,8 @@ export default {
     }
   }
   tbody tr:nth-child(34) {
-    .is-left {
+    .is-left,
+    .is-center {
       color: #333;
     }
   }
@@ -710,7 +724,8 @@ export default {
     }
   }
   tbody tr:nth-child(42) {
-    .is-left {
+    .is-left,
+    .is-center {
       color: #333;
     }
   }
@@ -727,7 +742,8 @@ export default {
     }
   }
   tbody tr:nth-child(50) {
-    .is-left {
+    .is-left,
+    .is-center {
       color: #333;
     }
   }
@@ -746,7 +762,8 @@ export default {
   }
 
   tbody tr:nth-child(58) {
-    .is-left {
+    .is-left,
+    .is-center {
       color: #333;
     }
   }
@@ -758,7 +775,8 @@ export default {
     }
   }
   tbody tr:nth-child(66) {
-    .is-left {
+    .is-left,
+    .is-center {
       color: #333;
     }
   }
