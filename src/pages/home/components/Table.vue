@@ -725,13 +725,19 @@ export default {
   tbody tr:nth-child(57) {
     display: grid;
     margin-top: 6px;
-    margin-right: -64px;
+    margin-right: -128px;
     border-bottom-left-radius: 34px;
     .is-left {
       border-bottom-left-radius: 0.2rem;
     }
     .el-table__expand-icon {
       font-size: 0.6rem;
+    }
+  }
+
+  tbody tr:nth-child(58) {
+    .is-left {
+      color: #333;
     }
   }
   tbody tr:nth-child(65) {
