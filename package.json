@@ -11,6 +11,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@byzanteam/graphite": "^0.4.1",
     "@byzanteam/map-ui": "../map-ui",
     "@byzanteam/vis-components": "../../vis-components",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
