@@ -60,7 +60,11 @@
   </header>
 </template>
 <script>
+import {DigitalRoll} from '@byzanteam/vis-components'
 export default {
+  components: {
+    DigitalRoll
+  },
   data() {
     return {
       total: 1139
