@@ -3,6 +3,7 @@
     <home-header></home-header>
     <section class="section">
       <donut />
+      <radar />
     </section>
     <home-footer></home-footer>
   </div>
@@ -12,12 +13,14 @@
 import HomeHeader from '../home/components/Header'
 import HomeFooter from '../home/components/Footer'
 import Donut from './donut'
+import Radar from './radar'
 
 export default {
   name: 'Home',
   components: {
     HomeHeader,
     Donut,
+    Radar,
     HomeFooter
   }
 }
