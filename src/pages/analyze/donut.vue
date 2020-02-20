@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import {
   Donut
 } from '@byzanteam/graphite'
@@ -27,19 +28,20 @@ export default {
 
   data() {
     return {
-      donutData: [{
-        label: '停产',
-        count: '2'
-      },
-      {
-        label: '生产',
-        count: '5'
-      },
-      {
-        label: '分别统计企业数量',
-        count: '6'
-      }]
+      donutData: []
     }
+  },
+
+  created () {
+    axios.get('/8a0b6c83-919e-4b12-b921-5e8635f005ce/data').then(({data: {data, schema}}) => {
+      console.log(data, schema)
+      this.donutData = data.map((item, index) => {
+        return {
+          label: item[0],
+          count: item[1]
+        }
+      })
+    })
   }
 }
 </script>

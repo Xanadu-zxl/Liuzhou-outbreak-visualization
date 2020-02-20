@@ -6,7 +6,7 @@
       <span class="analyze-chart-title-unit">/个</span>
     </div>
     <donut
-      :data="donutData"
+      :data="pieData"
       labelKey="label"
       :valueKey="['count']"
       :theme="{background: 'transparent'}"
@@ -31,13 +31,13 @@ export default {
         shut_down: '停产',
         working: '生产'
       },
-      donutData: []
+      pieData: []
     }
   },
 
   created () {
     axios.get('/a130abd7-72aa-412e-8ce2-0c3c2f509369/data').then(({data: {data, schema}}) => {
-      this.donutData = data[0].map((item, index) => {
+      this.pieData = data[0].map((item, index) => {
         return {
           label: this.labelMap[schema[index].field],
           count: item
