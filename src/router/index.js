@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Home from '@/pages/home/Home'
 import Analyze from '@/pages/analyze/analyze'
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   mode: 'history',
