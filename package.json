@@ -11,8 +11,10 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@byzanteam/graphite": "^0.4.1",
     "@byzanteam/map-ui": "../map-ui",
-    "@byzanteam/vis-components": "../vis-components",
+    "@byzanteam/vis-components": "../../vis-components",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "echarts": "^4.6.0",
     "element-ui": "^2.13.0",
     "fix": "0.0.6",
@@ -24,6 +26,7 @@
     "tslib": "^1.10.0",
     "vue": "^2.5.2",
     "vue-echarts": "^5.0.0-beta.0",
+    "vue-i18n": "^8.15.3",
     "vue-router": "^3.0.1",
     "vue-touch": "^2.0.0-beta.4"
   },
