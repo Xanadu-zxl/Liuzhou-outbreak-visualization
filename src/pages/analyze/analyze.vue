@@ -11,7 +11,7 @@
 <script>
 import HomeHeader from '../home/components/Header'
 import HomeFooter from '../home/components/Footer'
-import Donut from './bar'
+import Donut from './donut'
 
 export default {
   name: 'Home',
