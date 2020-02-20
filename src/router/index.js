@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/pages/home/Home'
-import Work from '../pages/home/re_work'
+import Analyze from '@/pages/analyze/analyze'
 
 Vue.use(Router);
 
 export default new Router({
+  mode: 'history',
+  base: '/',
   routes: [
     {
       path: '/',
@@ -13,9 +15,9 @@ export default new Router({
       component: Home
     },
     {
-      path: 'work',
-      name: 'work',
-      component: Work
+      path: '/analyze',
+      name: 'Analyze',
+      component: Analyze
     }
   ]
 })
