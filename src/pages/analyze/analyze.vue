@@ -5,6 +5,7 @@
     <radar />
     <horizontal-bar />
     <donut />
+    <analyze-table />
     <home-footer></home-footer>
   </div>
 </template>
@@ -16,6 +17,7 @@ import Pie from './pie'
 import Radar from './radar'
 import HorizontalBar from './horizontal_bar'
 import Donut from './donut'
+import AnalyzeTable from './table'
 
 export default {
   name: 'Home',
@@ -25,6 +27,7 @@ export default {
     Radar,
     HorizontalBar,
     Donut,
+    AnalyzeTable,
     HomeFooter
   }
 }
