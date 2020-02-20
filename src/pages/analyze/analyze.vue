@@ -2,7 +2,7 @@
   <div>
     <home-header></home-header>
     <section class="section">
-
+      <donut />
     </section>
     <home-footer></home-footer>
   </div>
