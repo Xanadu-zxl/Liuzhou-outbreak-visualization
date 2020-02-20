@@ -1,10 +1,9 @@
 <template>
   <div>
     <analyze-header></analyze-header>
-    <section class="section">
-      <donut />
-      <radar />
-    </section>
+    <donut />
+    <radar />
+    <horizontal-bar />
     <home-footer></home-footer>
   </div>
 </template>
@@ -14,6 +13,7 @@ import AnalyzeHeader from '../home/components/Header'
 import HomeFooter from '../home/components/Footer'
 import Donut from './donut'
 import Radar from './radar'
+import HorizontalBar from './horizontal_bar'
 
 export default {
   name: 'Home',
@@ -21,12 +21,13 @@ export default {
     AnalyzeHeader,
     Donut,
     Radar,
+    HorizontalBar,
     HomeFooter
   }
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 .section {
   background-color: #fff;
   border-radius: 0.35rem;

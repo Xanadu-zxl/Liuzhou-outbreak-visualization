@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section class="section">
     <radar
       :data="radarData"
       labelKey="label"
@@ -10,7 +10,7 @@
         radiusRange: [0, radarData.reduce((acc, item) => { return item.count >= acc ? item.count : acc }, 0)],
       }"
     />
-  </div>
+  </section>
 </template>
 
 <script>

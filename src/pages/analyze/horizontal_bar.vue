@@ -1,7 +1,7 @@
 <template>
   <section class="section">
-    <donut
-      :data="donutData"
+    <horizontal-bar
+      :data="barData"
       labelKey="label"
       :valueKey="['count']"
       :theme="{background: 'transparent'}"
@@ -11,27 +11,30 @@
 
 <script>
 import {
-  Donut
+  HorizontalBar
 } from '@byzanteam/graphite'
 
 export default {
   components: {
-    Donut
+    HorizontalBar
   },
 
   data() {
     return {
-      donutData: [{
-        label: '停产',
-        count: '2'
+      barData: [{
+        label: '01.28',
+        count: 2
       },
       {
-        label: '生产',
-        count: '5'
+        label: '01.29',
+        count: 5
       },
       {
-        label: '分别统计企业数量',
-        count: '6'
+        label: '01.30',
+        count: 6
+      }, {
+        label: '01.31',
+        count: 6
       }]
     }
   }
