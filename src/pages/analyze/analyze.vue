@@ -1,9 +1,10 @@
 <template>
   <div>
     <analyze-header></analyze-header>
-    <donut />
+    <pie />
     <radar />
     <horizontal-bar />
+    <donut />
     <home-footer></home-footer>
   </div>
 </template>
@@ -11,17 +12,19 @@
 <script>
 import AnalyzeHeader from '../home/components/Header'
 import HomeFooter from '../home/components/Footer'
-import Donut from './donut'
+import Pie from './pie'
 import Radar from './radar'
 import HorizontalBar from './horizontal_bar'
+import Donut from './donut'
 
 export default {
   name: 'Home',
   components: {
     AnalyzeHeader,
-    Donut,
+    Pie,
     Radar,
     HorizontalBar,
+    Donut,
     HomeFooter
   }
 }

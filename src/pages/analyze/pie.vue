@@ -2,14 +2,13 @@
   <section class="section">
     <div class="analyze-chart-title">
       <div class="analyze-chart-title-badge"></div>
-      <span>已填报复工信息企业行业分布</span>
+      <span>已填报复工信息企业生产情况</span>
+      <span class="analyze-chart-title-unit">/个</span>
     </div>
     <donut
       :data="donutData"
       labelKey="label"
       :valueKey="['count']"
-      :innerRadius="0.55"
-      :hideLabel="true"
       :theme="{background: 'transparent'}"
     />
   </section>
