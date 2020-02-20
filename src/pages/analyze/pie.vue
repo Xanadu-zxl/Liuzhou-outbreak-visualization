@@ -16,7 +16,6 @@
 
 <script>
 import axios from 'axios'
-
 import {
   Donut
 } from '@byzanteam/graphite'
@@ -39,11 +38,10 @@ export default {
   created () {
     axios.get('/a130abd7-72aa-412e-8ce2-0c3c2f509369/data').then(({data: {data, schema}}) => {
       this.donutData = data[0].map((item, index) => {
-        const serie = {
+        return {
           label: this.labelMap[schema[index].field],
           count: item
         }
-        return serie
       })
     })
   }

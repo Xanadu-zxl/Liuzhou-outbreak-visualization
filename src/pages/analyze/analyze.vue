@@ -35,7 +35,7 @@ export default {
   background-color: #fff;
   border-radius: 0.35rem;
   margin: 0.75rem 4% 0.5rem;
-  padding: 1.25rem 0.5rem 1.875rem;
+  padding: 1.25rem 0.5rem;
 }
 
 .analyze-chart-title {
