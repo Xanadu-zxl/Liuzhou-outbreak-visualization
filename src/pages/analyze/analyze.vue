@@ -1,6 +1,6 @@
 <template>
   <div>
-    <home-header></home-header>
+    <analyze-header></analyze-header>
     <section class="section">
       <donut />
       <radar />
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import HomeHeader from '../home/components/Header'
+import AnalyzeHeader from '../home/components/Header'
 import HomeFooter from '../home/components/Footer'
 import Donut from './donut'
 import Radar from './radar'
@@ -18,7 +18,7 @@ import Radar from './radar'
 export default {
   name: 'Home',
   components: {
-    HomeHeader,
+    AnalyzeHeader,
     Donut,
     Radar,
     HomeFooter
