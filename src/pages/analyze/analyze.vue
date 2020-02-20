@@ -2,7 +2,6 @@
   <div>
     <analyze-header></analyze-header>
     <pie />
-    <radar />
     <horizontal-bar />
     <donut />
     <analyze-table />
@@ -14,7 +13,6 @@
 import AnalyzeHeader from '../home/components/Header'
 import HomeFooter from '../home/components/Footer'
 import Pie from './pie'
-import Radar from './radar'
 import HorizontalBar from './horizontal_bar'
 import Donut from './donut'
 import AnalyzeTable from './table'
@@ -24,7 +22,6 @@ export default {
   components: {
     AnalyzeHeader,
     Pie,
-    Radar,
     HorizontalBar,
     Donut,
     AnalyzeTable,
