@@ -11,9 +11,10 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@byzanteam/carbonium": "^0.4.1",
     "@byzanteam/graphite": "^0.4.1",
     "@byzanteam/map-ui": "../map-ui",
-    "@byzanteam/vis-components": "../../vis-components",
+    "@byzanteam/vis-components": "latest",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "echarts": "^4.6.0",
     "element-ui": "^2.13.0",
