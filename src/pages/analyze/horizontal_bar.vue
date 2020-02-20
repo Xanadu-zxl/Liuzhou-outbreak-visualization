@@ -1,5 +1,10 @@
 <template>
   <section class="section">
+    <div class="analyze-chart-title">
+      <div class="analyze-chart-title-badge"></div>
+      <span>已计划复工时间企业数量分布</span>
+      <span class="analyze-chart-title-unit">/个</span>
+    </div>
     <horizontal-bar
       :data="barData"
       labelKey="label"

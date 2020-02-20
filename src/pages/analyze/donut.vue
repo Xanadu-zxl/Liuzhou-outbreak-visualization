@@ -1,5 +1,10 @@
 <template>
   <section class="section">
+    <div class="analyze-chart-title">
+      <div class="analyze-chart-title-badge"></div>
+      <span>已填报复工信息企业生产情况</span>
+      <span class="analyze-chart-title-unit">/个</span>
+    </div>
     <donut
       :data="donutData"
       labelKey="label"
