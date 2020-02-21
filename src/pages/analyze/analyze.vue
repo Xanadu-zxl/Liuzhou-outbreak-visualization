@@ -33,32 +33,45 @@ export default {
 <style lang="less">
 .section {
   background-color: #fff;
-  border-radius: 0.35rem;
-  margin: 0.75rem 4% 0.5rem;
-  padding: 1.25rem 0.5rem;
+  border-radius: .35rem;
+  margin: .5rem 4% ;
+  padding: 1.25rem 2.5%;
+  height: 17.5rem;
+  box-sizing: border-box;
 }
 
 .analyze-chart-title {
   color: #333333;
-  font-size: .75rem;
+  font-size: .9rem;
   font-weight: 500;
   display: flex;
   align-items: center;
-  margin-bottom: .75rem;
+  flex-wrap: wrap;
   letter-spacing: .025rem;
+  line-height: 1;
 
   .analyze-chart-title-badge {
     width: .25rem;
     height: .6rem;
-    background-color: #39aabb;
+    background-color: #0085ff;
     border-radius: .125rem;
     margin-right: .5rem;
   }
 
   .analyze-chart-title-unit {
-    color: #666666;
-    font-size: .45rem;
+    color: #999999;
+    font-size: .6rem;
     margin-left: 0.2rem;
+  }
+
+  .analyze-chart-subtitle {
+    color: #999999;
+    font-size: .55rem;
+    padding-left: .7rem;
+    flex: 0 0 1;
+    line-height: 1;
+    margin: .4rem 0 1rem 0;
+    font-weight: 400;
   }
 }
 </style>
