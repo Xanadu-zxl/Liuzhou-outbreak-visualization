@@ -74,6 +74,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import '@byzanteam/vis-components/dist/index.css';
+
 .header {
   background-size: contain;
   position: relative;
