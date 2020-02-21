@@ -5,19 +5,21 @@
       <span>已填报复工信息企业生产情况</span>
       <span class="analyze-chart-title-unit">/个</span>
     </div>
-    <donut
-      :data="pieData"
-      labelKey="label"
-      :valueKey="['count']"
-      color="#333333"
-      :theme="{
-        background: 'transparent',
-        colors: ['#ffa90e', '#0085ff'],
-        font: {
-          family: 'Oswald-Regular',
-        }
-      }"
-    />
+    <div class="chart-container">
+      <donut
+        :data="pieData"
+        labelKey="label"
+        :valueKey="['count']"
+        color="#333333"
+        :theme="{
+          background: 'transparent',
+          colors: ['#ffa90e', '#0085ff'],
+          font: {
+            family: 'Oswald-Regular',
+          }
+        }"
+      />
+    </div>
   </section>
 </template>
 
@@ -54,3 +56,9 @@ export default {
   }
 }
 </script>
+
+<style lang="less" scoped>
+.chart-container {
+  height: 12.3rem;
+}
+</style>
