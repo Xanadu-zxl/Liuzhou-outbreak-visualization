@@ -32,7 +32,7 @@ export default {
 
 <style lang="less">
   html,body {
-    background: #D3DBE4 linear-gradient(to bottom, #2583D9 14.17%, #2583D900 30.16%);
+    background: #EDF2F5 linear-gradient(to bottom, #2583D9 14.17%, #2583D900 30.16%);
   }
 .section {
   background-color: #fff;
