@@ -1,65 +1,88 @@
 <template>
   <header class="header">
+    <div class="analyze-tabs">
+      <div class="analyze-tab">企业复工</div>
+      <div class="analyze-tab--pre">tab2</div>
+      <div class="analyze-tab--pre">tab3</div>
+      <div class="analyze-tab--pre">tab4</div>
+    </div>
     <div class="top-content">
       <div class="logo-word">
-        <img src="../../assets/img/logo.png" alt="word" class="banner-logo">
-        <img src="../../assets/img/banner-word.png" alt="word" class="banner-word">
+        <img src="../../assets/img/Banner-Slogon.png" alt="word" class="banner-word">
       </div>
     </div>
-
-    <div class="digital-container">
-        <div class="swipe-text">*向右滑动显示更多</div>
-        <div class="left-card">
-        <div class="left-card-container">
-          <div class="digital-title-left">昨日<span style="color: #333333;">+38</span></div>
-          <div class="digital-content-left">{{ total }}<span class="digital-suffix-left">人</span></div>
-          <div class="digital-header-left">重点人群管控</div>
-        </div>
+    <div class="digital-roll-container" v-if="showFirstPage">
+      <div class="digital-roll-next" @click="nextPage">
+        <img class="digital-roll-next_icon" style="margin-left: 0.1rem" src="../../assets/img/Icon-Arrow-Right.svg" alt="next-icon">
       </div>
-      <div class="right-card">
-        <div style="display: flex; flex-grow: 1">
-          <div id="from-wuhan" class="digital-wuhan">
-            <div class="from-to">
-              <div class="digital-title-right-top">昨日<span>+28</span></div>
-              <div class="digital-content-right">82<span class="digital-suffix-right">人</span></div>
-              <div class="digital-header-right-top">来自武汉市的市外人员</div>
-            </div>
-            <div class="from-to">
-              <div class="digital-title-right">昨日<span>+27</span></div>
-              <div class="digital-content-right">62<span class="digital-suffix-right">人</span></div>
-              <div class="digital-header-right">来自湖北省（除武汉市）的人员</div>
-            </div>
-          </div>
-          <div id="to-wuhan" class="digital-wuhan">
-            <div class="from-to">
-               <div class="digital-title-right-top">昨日<span>+2</span></div>
-               <div class="digital-content-right">38<span class="digital-suffix-right">人</span></div>
-                <div class="digital-header-right-top">到过武汉市的人员</div>
-            </div>
-            <div  class="from-to">
-              <div class="digital-title-right">昨日<span>+12</span></div>
-              <div class="digital-content-right">132<span class="digital-suffix-right">人</span></div>
-              <div class="digital-header-right">到过湖北省（除武汉市）的人员</div>
-            </div>
-          </div>
-          <div id="visit" class="digital-wuhan">
-            <div class="from-to">
-              <div class="digital-title-right-top">昨日<span>+28</span></div>
-              <div class="digital-content-right">45<span class="digital-suffix-right">人</span></div>
-              <div class="digital-header-right-top">密切接触者</div>
-            </div>
-            <div class="from-to">
-              <div class="digital-title-right">昨日<span>+7</span></div>
-              <div class="digital-content-right">112<span class="digital-suffix-right">人</span></div>
-              <div class="digital-header-right">仍在湖北省出差、休假、旅游、探亲人员</div>
-            </div>
-          </div>
-        </div>
+      <div class="digital-roll-container--half">
+      <div class="digital-roll-yesterday--top">昨日+{{ companyUpAmount }}人</div>
+      <digital-roll
+        style="margin-bottom: 2.475rem"
+        title-position="bottom"
+        :title-style="digital_title"
+        :digital-style="digital_digital"
+        :suffix-style="digital_suffix"
+        :content="totalCompany"
+      ></digital-roll>
+      <div class="digital-roll-yesterday--bottom">昨日+{{ resumeWorkAmount }}人</div>
+      <digital-roll
+        title-position="bottom"
+        :title-style="digital_title"
+        :digital-style="digital_digital"
+        :suffix-style="digital_suffix"
+        :content="resumeWork"
+      ></digital-roll>
+    </div>
+      <div class="digital-roll-container--half">
+<!--        <div class="digital-roll-beizhu">(包括出差、休假、旅游、探亲)</div>-->
+        <div class="digital-roll-yesterday--top">昨日+{{ huBeiProvinceAmount}}人</div>
+        <digital-roll
+          style="margin-bottom: 2.475rem"
+          title-position="bottom"
+          :title-style="digital_title"
+          :digital-style="digital_digital"
+          :suffix-style="digital_suffix"
+          :content="huBeiProvince"
+        ></digital-roll>
+        <div class="digital-roll-yesterday--bottom">昨日+{{ inFocusProvinceAmount  }}人</div>
+        <digital-roll
+          title-position="bottom"
+          :title-style="digital_title"
+          :digital-style="digital_digital"
+          :suffix-style="digital_suffix"
+          :content="inFocusProvince"
+        ></digital-roll>
+      </div>
+    </div>
+    <div class="digital-roll-container" v-if="!showFirstPage">
+      <div class="digital-roll-last" @click="lastPage">
+        <img class="digital-roll-next_icon" style="margin-right: 0.1rem" src="../../assets/img/Icon-Arrow-Left.svg" alt="next-icon">
+      </div>
+      <div class="digital-roll-container--half">
+        <div class="digital-roll-yesterday--top">昨日+{{ closeExposureAmount }}人</div>
+        <digital-roll
+          style="margin-bottom: 2.475rem"
+          title-position="bottom"
+          :title-style="digital_title"
+          :digital-style="digital_digital"
+          :suffix-style="digital_suffix"
+          :content="closeExposure"
+        ></digital-roll>
+        <div class="digital-roll-yesterday--bottom">昨日+{{ medicalObserverAmount }}人</div>
+        <digital-roll
+          title-position="bottom"
+          :title-style="digital_title"
+          :digital-style="digital_digital"
+          :suffix-style="digital_suffix"
+          :content="medicalObserver"
+        ></digital-roll>
       </div>
     </div>
   </header>
 </template>
 <script>
+import axios from 'axios'
 import {DigitalRoll} from '@byzanteam/vis-components'
 export default {
   components: {
@@ -67,7 +90,94 @@ export default {
   },
   data() {
     return {
-      total: 1139
+      totalCompany: {
+        title: '已填报复工信息企业数',
+        suffix: '个',
+        digital: 10
+      },
+      companyUpAmount: 1,
+      resumeWork: {
+        title: '准备复工人数',
+        suffix: '人',
+        digital: 10
+      },
+      resumeWorkAmount: 1,
+      huBeiProvince: {
+        title: '湖北籍职工数',
+        suffix: '人',
+        digital: 10
+      },
+      huBeiProvinceAmount: 12,
+      inFocusProvince: {
+        title: '仍在重点防控省份人数',
+        suffix: '人',
+        digital: 10
+      },
+      inFocusProvinceAmount: 12,
+      closeExposure: {
+        title: '密切接触者人数',
+        suffix: '人',
+        digital: 10
+      },
+      closeExposureAmount: 12,
+      medicalObserver: {
+        title: '医学观察人员',
+        suffix: '人',
+        digital: 10
+      },
+      medicalObserverAmount: 12,
+      digital_title: {
+        color: '#666666',
+        fontSize: '0.6rem',
+        fontWeight: 400
+      },
+      digital_digital: {
+        fontFamily: 'Oswald',
+        color: '#0D83ED',
+        fontSize: '1.3rem',
+        fontWeight: 500
+      },
+      digital_suffix: {
+        color: '#999999',
+        fontSize: '0.55rem',
+        fontWeight: 400
+      },
+      showFirstPage: true
+    }
+  },
+  created() {
+    axios.get('/51685a1a-e98f-4b9b-b624-dbaf7fa31128/data').then(({data: {data, schema}}) => {
+      this.totalCompany.digital = data[0][0];
+      this.companyUpAmount = data[0][1]
+    });
+    axios.get('/91b405de-6710-46af-b715-5c51fff851b5/data').then(({data: {data, schema}}) => {
+      this.resumeWork.digital = data[0][0];
+      this.resumeWorkAmount = data[0][1]
+    });
+    axios.get('/3bedea77-6ed7-4c18-99bb-2127aec17101/data').then(({data: {data, schema}}) => {
+      this.huBeiProvince.digital = data[0][0];
+      this.huBeiProvinceAmount = data[0][1]
+    });
+    axios.get('/40a99333-c802-4711-8a40-cef4d9f5579e/data').then(({data: {data, schema}}) => {
+      this.inFocusProvince.digital = data[0][0];
+      this.inFocusProvinceAmount = data[0][1]
+    });
+    axios.get('/8db746ce-e83d-4adc-b8a6-a08b4958581c/data').then(({data: {data, schema}}) => {
+      this.closeExposure.digital = data[0][0];
+      this.closeExposureAmount = data[0][1]
+    });
+    axios.get('/398a1082-5274-4c84-a894-bae5fcbb87a9/data').then(({data: {data, schema}}) => {
+      this.medicalObserver.digital = data[0][0];
+      this.medicalObserverAmount = data[0][1]
+    });
+  },
+
+  methods: {
+    nextPage () {
+      this.showFirstPage = false
+    },
+    lastPage () {
+      this.showFirstPage = true
     }
   }
 }
@@ -75,206 +185,159 @@ export default {
 
 <style lang="less" scoped>
 .header {
-  background-size: contain;
-  position: relative;
-  .icon {
-    width: 120px;
-
-    img {
-      margin-top: 20px;
-      width: 100%;
-    }
-
-    .city {
-      position: absolute;
-      cursor: pointer;
-      top: 20px;
-      right: 17px;
-      display: inline-block;
-      max-width: 83px;
-      height: 28px;
-      padding: 0 8px;
-      line-height: 28px;
-      opacity: 0.76;
-      background: #e5feff;
-      border-radius: 51px;
-      text-align: center;
-      font-size: 14px;
-      color: #104345;
-
-      span {
-        max-width: 68px;
-        display: inline-block;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        vertical-align: top;
-      }
-
-      .xsj {
-        display: inline-block;
-        width: 10px;
-        height: 28px;
-        background-image: url(//mms-res.cdn.bcebos.com/mms-res/voicefe/captain/mola/Virus/1.1.129/assets/arrow-expand.62b1a23.svg);
-        background-position: 50%;
-        background-size: contain;
-        background-repeat: no-repeat;
-        margin-left: 5px;
-      }
-    }
-  }
 }
-
-  .top-content{
-    height:10.2rem;
-    background-position: bottom right;
-    background-repeat:no-repeat;
-    background-size: auto 100%;
-    background-image: url("../../assets/img/banner-m.png");
-    padding: 0 4%;
-  }
-    @media screen and (min-width: 900px) {
-    .top-content{
-      background-image: url("../../assets/img/banner-pc.png");
-      background-size: auto 124%;
-      background-position: 100% 40%;
-    }
+.analyze-tabs {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 2.3rem;
+  background-color: #2583D9;
 }
-  .logo-word {
-    display: flex;
-    flex-flow: column;
+.analyze-tab {
+  white-space: nowrap;
+  z-index: 2;
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 2.3rem;
+  padding: 0 .75rem;
+  margin-right: .3rem;
+}
+.analyze-tab--pre {
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 2.3rem;
+  padding: 0 .75rem;
+  margin-right: .3rem;
+  opacity: 50%;
+  width: 3.2rem;
+  text-align: center;
+}
+.analyze-tab:after{
+  content: '';
+  display:block;
+  width:30px;
+  border-bottom:4px solid #fff;
+  border-radius: 2px;
+  margin: 0 auto;
+}
+.top-content{
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 7.15rem;
+  background-position: bottom right;
+  background-repeat:no-repeat;
+  background-size: 100% 100%;
+  background-image: url("../../assets/img/Banner.png");
+  margin-top: 2.25rem;
+  padding: 0 4%;
   }
-  .banner-bg {
+
+.logo-word {
+  margin-top: 1.4rem;
+  display: flex;
+  flex-flow: column;
+  }
+
+.banner-bg {
     max-height: 10.2rem;
   }
-  .banner-word {
-    margin-top: 2.15rem;
-    width: 9.2rem;
-    max-height: 4.05rem;
+
+.banner-word {
+  width: 12.95rem;
+  height: 2.7rem;
   }
-  .banner-logo {
+
+.banner-logo {
     margin-top: 0.95rem;
     max-width: 3.75rem;
     max-height: 1.1rem;
   }
-  .digital-container {
-    position: relative;
-    max-width: 39rem;
-    display: flex;
-  }
-  .left-card {
-    background-image: linear-gradient(to right, #F8EAE8 , #FFFFFF);
-    border-radius: 0 0.35rem 0.35rem 0;
-    margin-right: 2%;
-    width: 35.9% ;
-    min-width: 135px;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-  }
-  .left-card-container {
-    display: flex;
-    flex-flow: column;
-  }
-  .digital-content-left {
-    line-height: 1.2;
-    color: #BB3939;
-    font-size: 1.5rem;
-    font-weight: 500;
-  }
-  .digital-suffix-left {
-    color: #333333;
-    font-size: 0.55rem;
-    font-weight: 400;
-    margin-left: .2rem;
-  }
-  .digital-header-left {
-    margin-bottom: 2.3rem;
-    color:#333333;
-    font-size: 0.75rem;
-    font-weight: 400;
-    letter-spacing: .025rem;
-  }
-  .digital-title-left{
-    margin-top: 2.3rem;
-    color:#999999;
-    font-size: 0.55rem;
-    font-weight: 400;
-    text-align: left;
-  }
-  .right-card{
-    background-image: linear-gradient(to right, #FFF9ED , #FFFFFF);
-    border-radius:0.35rem 0 0 0.35rem;
-    flex-grow: 1;
-    display: flex;
-    position: relative;
-    overflow-x: scroll;
-  }
-  .swipe-text {
-    position: absolute;
-    z-index: 2;
-    right: 0.65rem;
-    top: 0.3rem;
-    color:#999999;
-    font-size: 9px !important;
-    font-weight: 400;
-    text-align: left;
-  }
-  .digital-wuhan {
-    display: flex;
-    flex-flow: column;
-    margin-left: 0.65rem;
-    margin-right: 0.65rem;
-    width: 11.65rem;
-  }
-  .digital-hubei {
-    display: flex;
-    flex-flow: column;
-    margin-left: 0.65rem;
-    margin-right: 0.65rem;
-    width: 11.65rem;
-  }
-  .digital-suffix-right {
-    color: #999999;
-    font-size: 0.55rem;
-    font-weight: 400;
-    margin-left: .2rem;
-  }
-  .digital-content-right {
-    line-height: 1.2;
-    color: #E2951C;
-    font-size: 1.2rem;
-    font-weight: 500;
-  }
-  .digital-header-right-top {
-    padding-bottom: 0.4rem;
-    color: #333333;
-    font-size: 0.6rem;
-    font-weight: 400;
-    border-bottom: 1px solid #DEDEDE;
-    white-space: nowrap;
-    letter-spacing: .025rem;
-  }
-  .digital-header-right {
-    color: #333333;
-    font-size: 0.6rem;
-    font-weight: 400;
-    white-space: nowrap;
-    letter-spacing: .025rem;
-  }
-  .digital-title-right-top {
-    margin-top: 0.85rem;
-    color:#999999;
-    font-size: 9px !important;
-    font-weight: 400;
-    text-align: left;
-  }
-  .digital-title-right {
-      padding-top: 0.4rem;
-      color:#999999;
-      font-size: 9px !important;
-      font-weight: 400;
-      text-align: left;
-  }
 
+.digital-roll-container {
+  position: relative;
+  display: flex;
+  background-color: #fff;
+  border-radius: 0.35rem;
+  margin: 8rem 4% 0.5rem;
+  padding: 2.125rem 0 1.15rem;
+}
+.digital-roll-beizhu {
+  position: absolute;
+  bottom: 0;
+  font-size: 0.45rem;
+  color:#999999;
+  white-space: nowrap;
+}
+.digital-roll-next {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(33%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: .625rem;
+  border: .05rem solid #EAEAEA;
+  background-color: #ffffff;
+  box-shadow: 0 .1rem .5rem #00000014;
+}
+.digital-roll-last {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-33%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: .625rem;
+  border: .05rem solid #EAEAEA;
+  background-color: #ffffff;
+  box-shadow: 0 .1rem .5rem #00000014;
+}
+.digital-roll-next_icon {
+  width: .5rem;
+  height: .5rem;
+}
+.digital-roll-container--half {
+  display: flex;
+  padding-left: 18px;
+  flex-flow: column;
+  width: 50%;
+}
+
+.digital-roll-yesterday--top {
+  margin-bottom: .1rem;
+  color: #629BCD;
+  padding: .075rem .15rem;
+  font-weight: 400;
+  font-size: 0.45rem;
+  text-align: left;
+  border-radius: .1rem;
+  background-color: #EAF4FC;
+  position: absolute;
+  top: 1rem;
+}
+.digital-roll-yesterday--bottom {
+  position: absolute;
+  top: 6.1rem;
+  color: #629BCD;
+  padding: .075rem .15rem;
+  font-weight: 400;
+  font-size: 0.55rem;
+  text-align: left;
+  border-radius: .1rem;
+  background-color: #EAF4FC;
+  margin-bottom: .1rem;
+}
 </style>

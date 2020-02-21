@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import AnalyzeHeader from '../home/components/Header'
+import AnalyzeHeader from './Header'
 import HomeFooter from '../home/components/Footer'
 import Pie from './pie'
 import HorizontalBar from './horizontal_bar'
@@ -31,6 +31,9 @@ export default {
 </script>
 
 <style lang="less">
+  html,body {
+    background: #EDF2F5 linear-gradient(to bottom, #2583D9 14.17%, #2583D900 30.16%);
+  }
 .section {
   background-color: #fff;
   border-radius: .35rem;

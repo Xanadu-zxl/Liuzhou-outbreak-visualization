@@ -8,6 +8,7 @@ import ElementUI from 'element-ui'
 
 import 'element-ui/lib/theme-chalk/index.css'
 import '@byzanteam/carbonium/dist/carbonium.css'
+import '@byzanteam/vis-components/dist/index.css'
 import './assets/style/index.css'
 
 Vue.use(ElementUI);
