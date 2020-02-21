@@ -148,8 +148,10 @@ export default {
   }
 
 .digital-roll-container {
-  background-color: #ffffff;
-  width: 92vw;
+  background-color: #fff;
+  border-radius: 0.35rem;
+  margin: 0.75rem 4% 0.5rem;
+  padding: 1.25rem 0.5rem;
 }
 .digital-roll--bottom {
   display: -webkit-box;
