@@ -184,6 +184,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import '@byzanteam/vis-components/dist/index.css';
+
 .header {
 }
 .analyze-tabs {
