@@ -7,6 +7,7 @@ import axios from 'axios'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import '@byzanteam/carbonium/dist/carbonium.css'
+import '@byzanteam/vis-components/dist/index.common.js'
 
 Vue.use(ElementUI);
 Vue.config.productionTip = false;

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import AnalyzeHeader from '../home/components/Header'
+import AnalyzeHeader from './Header'
 import HomeFooter from '../home/components/Footer'
 import Pie from './pie'
 import HorizontalBar from './horizontal_bar'
