@@ -1,5 +1,11 @@
 <template>
   <header class="header">
+    <div class="analyze-tabs">
+      <div class="analyze-tab">企业复工</div>
+      <div class="analyze-tab--pre">tab2</div>
+      <div class="analyze-tab--pre">tab3</div>
+      <div class="analyze-tab--pre">tab4</div>
+    </div>
     <div class="top-content">
       <div class="logo-word">
         <img src="../../assets/img/Banner-Slogon.png" alt="word" class="banner-word">
@@ -175,56 +181,43 @@ export default {
 
 <style lang="less" scoped>
 .header {
-  background-size: contain;
-  position: relative;
-  .icon {
-    width: 120px;
-
-    img {
-      margin-top: 20px;
-      width: 100%;
-    }
-
-    .city {
-      position: absolute;
-      cursor: pointer;
-      top: 20px;
-      right: 17px;
-      display: inline-block;
-      max-width: 83px;
-      height: 28px;
-      padding: 0 8px;
-      line-height: 28px;
-      opacity: 0.76;
-      background: #e5feff;
-      border-radius: 51px;
-      text-align: center;
-      font-size: 14px;
-      color: #104345;
-
-      span {
-        max-width: 68px;
-        display: inline-block;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        vertical-align: top;
-      }
-
-      .xsj {
-        display: inline-block;
-        width: 10px;
-        height: 28px;
-        background-image: url(//mms-res.cdn.bcebos.com/mms-res/voicefe/captain/mola/Virus/1.1.129/assets/arrow-expand.62b1a23.svg);
-        background-position: 50%;
-        background-size: contain;
-        background-repeat: no-repeat;
-        margin-left: 5px;
-      }
-    }
-  }
 }
-
+.analyze-tabs {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 2.25rem;
+  background-color: #2583D9;
+}
+.analyze-tab {
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 2.25rem;
+  padding: 0 .75rem;
+  margin-right: .3rem;
+}
+.analyze-tab--pre {
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 2.25rem;
+  padding: 0 .75rem;
+  margin-right: .3rem;
+  opacity: 50%;
+}
+.analyze-tab:after{
+  content: '';
+  display:block;
+  width:30px;
+  border-bottom:4px solid #fff;
+  border-radius: 2px;
+  margin: 0 auto;
+}
 .top-content{
   display: flex;
   align-items: center;
@@ -233,6 +226,7 @@ export default {
   background-repeat:no-repeat;
   background-size: 100% 100%;
   background-image: url("../../assets/img/Banner.png");
+  margin-top: 2.25rem;
   padding: 0 4%;
   }
   @media screen and (min-width: 900px) {
@@ -268,7 +262,7 @@ export default {
   display: flex;
   background-color: #fff;
   border-radius: 0.35rem;
-  margin: 0.75rem 4% 0.5rem;
+  margin: 0 4% 0.5rem;
   padding: 1.15rem 0;
 }
 .digital-roll-next {

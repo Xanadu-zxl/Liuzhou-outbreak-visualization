@@ -24,7 +24,6 @@ html {
 html,
 body {
   width: 100%;
-  background: #D3DBE4 linear-gradient(to bottom, #3D5D7C 0%, #3D5D7C 12.48%, #3D5D7C00 36.96%);
 }
 
 #app {
