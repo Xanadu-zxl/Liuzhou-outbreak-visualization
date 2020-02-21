@@ -72,6 +72,10 @@ export default {
   height: 19rem;
 }
 
+.analyze-chart-title {
+  margin-bottom: 1rem;
+}
+
 .chart-container {
   height: 13rem;
 }

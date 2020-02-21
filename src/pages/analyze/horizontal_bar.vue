@@ -60,6 +60,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.analyze-chart-title {
+  margin-bottom: 1.25rem;
+}
+
 .chart-container {
   margin-bottom: 1.25rem;
   height: 12.8rem;

@@ -64,6 +64,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.analyze-chart-title {
+  margin-bottom: 1.5rem;
+}
+
 .chart-container {
   height: 12.3rem;
 }

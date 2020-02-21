@@ -33,9 +33,9 @@ export default {
 <style lang="less">
 .section {
   background-color: #fff;
-  border-radius: 0.35rem;
-  margin: 0.75rem 4% 0.5rem;
-  padding: 1.25rem 0.5rem;
+  border-radius: .35rem;
+  margin: .5rem 4% ;
+  padding: 1.25rem .5rem;
 }
 
 .analyze-chart-title {
@@ -45,7 +45,6 @@ export default {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  margin-bottom: .75rem;
   letter-spacing: .025rem;
   line-height: 1;
 
@@ -70,6 +69,7 @@ export default {
     flex: 0 0 1;
     line-height: 1;
     margin: .4rem 0 1rem 0;
+    font-weight: 400;
   }
 }
 </style>

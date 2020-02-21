@@ -57,20 +57,26 @@ export default {
 </script>
 
 <style lang="less">
+.analyze-chart-title {
+  margin-bottom: .4rem;
+}
+
 .table.table--stripe {
+  table {
+    width: 100%;
+    table-layout: fixed;
+  }
+
   .table__head {
     color: #333333;
     font-size: .65rem !important;
     font-weight: 500;
-
-    table {
-      width: 100%;
-    }
+    height: 2rem;
 
     th {
       text-align: left;
       height: 2rem;
-      padding: .4rem .4rem;
+      padding-left: .4rem;
     }
 
     th:nth-child(1) {
@@ -84,7 +90,8 @@ export default {
 
   .table__body {
     height: 21.5rem;
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
 
     tr {
       font-size: .65rem;
@@ -110,6 +117,12 @@ export default {
 
     tr:nth-child(odd) {
       background-color: transparent;
+    }
+
+    .table__cell--scroll {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
   }
 
