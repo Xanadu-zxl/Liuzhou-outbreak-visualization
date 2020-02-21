@@ -10,11 +10,26 @@
         <horizontal-bar
           :data="barData"
           labelKey="label"
-          :valueKey="['count']"
+          :valueKey="['计划复工企业数量（个）']"
           :theme="{background: 'transparent'}"
           :series="['#0d83ed']"
-          :gap="{outer: .95, inner: .8}"
-          :crossAxis="{range: {count: 8}}"
+          :gap="{outer: 3.4, inner: 200.8}"
+          :crossAxis="{
+            labelStyle: {
+              fill: 'transparent'
+            },
+            lineStyle: {
+              stroke: 'transparent',
+            }
+          }"
+          :mainAxis="{
+            labelStyle: {
+              fill: '#999999'
+            },
+            lineStyle: {
+              stroke: 'transparent',
+            },
+          }"
           :tooltipOptions="{
             background: '#ffffff'
           }"
@@ -51,7 +66,7 @@ export default {
         const date = new Date(item[0]).getDate()
         return {
           label: month > 10 ? `${month}.${date}` : `0${month}.${date}`,
-          count: item[1]
+          '计划复工企业数量（个）': item[1]
         }
       })
     })
@@ -60,8 +75,14 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.section {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .analyze-chart-title {
-  margin-bottom: 1.25rem;
+  margin-bottom: .8rem;
+  padding-left: 2.5%;
 }
 
 .chart-container {
@@ -71,6 +92,6 @@ export default {
 }
 
 .chart-content {
-  height: 30rem;
+  height: 40.5rem;
 }
 </style>

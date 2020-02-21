@@ -35,7 +35,9 @@ export default {
   background-color: #fff;
   border-radius: .35rem;
   margin: .5rem 4% ;
-  padding: 1.25rem .5rem;
+  padding: 1.25rem 2.5%;
+  height: 17.5rem;
+  box-sizing: border-box;
 }
 
 .analyze-chart-title {

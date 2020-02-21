@@ -5,34 +5,37 @@
       <span>已填报复工信息企业行业分布</span>
     </div>
     <div class="chart-container">
-      <donut
-        :data="donutData"
-        labelKey="label"
-        :valueKey="['count']"
-        :innerRadius="0.55"
-        :hideLabel="true"
-        :theme="{
-          background: 'transparent',
-          colors: ['#0d83ed', '#ffa90e', '#fed05f', '#ffe8af', '#fef2d4', '#8494a3', '97a9ba', '#adc0d1', '#beccd8', '#707d88', '#85929d', '#9ca8b2', '#bac0c5', '#cad6e0', '#6898c1']
-        }"
-        :legend="{
-          notation: {
-            fill: '#333',
-            name: 'rect'
-          }
-        }"
-        :legendOptions="{
-          align: 'left',
-          position: 'bottom',
-          label: {
-            fill: '#999999',
-            size: 9,
-          },
-        }"
-        :tooltipOptions="{
-          background: '#ffffff'
-        }"
-      />
+      <div class="chart-content">
+        <donut
+          :data="donutData"
+          labelKey="label"
+          :valueKey="['count']"
+          :innerRadius="0.55"
+          :hideLabel="true"
+          :theme="{
+            background: 'transparent',
+            colors: ['#0d83ed', '#ffa90e', '#fed05f', '#ffe8af', '#fef2d4', '#8494a3', '#97a9ba', '#adc0d1', '#beccd8', '#707d88', '#85929d', '#9ca8b2', '#bac0c5', '#cad6e0', '#6898c1']
+          }"
+          :legend="{
+            notation: {
+              fill: '#333',
+              name: 'rect'
+            }
+          }"
+          :legendOptions="{
+            align: 'left',
+            position: 'bottom',
+            label: {
+              fill: '#999999',
+              size: 9,
+            },
+            padding: 0
+          }"
+          :tooltipOptions="{
+            background: '#ffffff'
+          }"
+        />
+      </div>
     </div>
   </section>
 </template>
@@ -68,15 +71,12 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.section {
-  height: 19rem;
-}
-
-.analyze-chart-title {
-  margin-bottom: 1rem;
-}
-
 .chart-container {
-  height: 13rem;
+  height: 14.2rem;
+  overflow: scroll;
+}
+
+.chart-content {
+  height: 12rem;
 }
 </style>

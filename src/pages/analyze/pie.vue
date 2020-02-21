@@ -65,10 +65,10 @@ export default {
 
 <style lang="less" scoped>
 .analyze-chart-title {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.65rem;
 }
 
 .chart-container {
-  height: 12.3rem;
+  height: 10rem;
 }
 </style>

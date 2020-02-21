@@ -1,12 +1,12 @@
 <template>
-  <section class="section">
+  <section class="section table">
     <div class="analyze-chart-title">
       <div class="analyze-chart-title-badge"></div>
       <span>企业防疫情况预警信息</span>
-      <div class="analyze-chart-subtitle">因涉及隐私信息保护，企业防疫联系人请在后台进行查阅</div>
+      <div class="analyze-chart-subtitle">因涉及隐私信息保护，企业防疫联系人请在后台查阅</div>
     </div>
     <vis-table
-      v-if="tableData.length >0"
+      v-if="tableData.length > 0"
       :headers="tableHeader"
       :data="tableData"
     />
@@ -57,6 +57,10 @@ export default {
 </script>
 
 <style lang="less">
+.section.table {
+  height: auto;
+}
+
 .analyze-chart-title {
   margin-bottom: .4rem;
 }
