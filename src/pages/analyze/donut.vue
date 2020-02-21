@@ -39,6 +39,7 @@
 
 <script>
 import axios from 'axios'
+import _ from 'lodash'
 import {
   Donut
 } from '@byzanteam/graphite'
@@ -56,12 +57,11 @@ export default {
 
   created () {
     axios.get('/8a0b6c83-919e-4b12-b921-5e8635f005ce/data').then(({data: {data, schema}}) => {
-      this.donutData = data.map((item, index) => {
-        return {
-          label: item[0],
-          count: item[1]
-        }
-      })
+      const donutData = data.map((item, index) => ({
+        label: item[0],
+        count: item[1]
+      }))
+      this.donutData = _.sortBy(donutData, item => (-item.count))
     })
   }
 }
