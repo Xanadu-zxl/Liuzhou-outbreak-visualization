@@ -115,11 +115,11 @@ export default {
       }
     }
 
-    tr:nth-child(even) {
+    tr:nth-child(odd) {
       background-color: rgba(188, 188, 188, .08);
     }
 
-    tr:nth-child(odd) {
+    tr:nth-child(even) {
       background-color: transparent;
     }
 
