@@ -31,6 +31,9 @@ export default {
 </script>
 
 <style lang="less">
+  html,body {
+    background: #D3DBE4 linear-gradient(to bottom, #2583D9 14.17%, #2583D900 30.16%);
+  }
 .section {
   background-color: #fff;
   border-radius: 0.35rem;

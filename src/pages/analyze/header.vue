@@ -219,6 +219,9 @@ export default {
   margin: 0 auto;
 }
 .top-content{
+  top: 0;
+  position: absolute;
+  width: 100%;
   display: flex;
   align-items: center;
   height: 7.15rem;
@@ -229,13 +232,6 @@ export default {
   margin-top: 2.25rem;
   padding: 0 4%;
   }
-  @media screen and (min-width: 900px) {
-    .top-content{
-      background-image: url("../../assets/img/banner-pc.png");
-      background-size: auto 124%;
-      background-position: 100% 40%;
-    }
-}
 
 .logo-word {
   display: flex;
@@ -262,7 +258,7 @@ export default {
   display: flex;
   background-color: #fff;
   border-radius: 0.35rem;
-  margin: 0 4% 0.5rem;
+  margin: 8rem 4% 0.5rem;
   padding: 1.15rem 0;
 }
 .digital-roll-next {
