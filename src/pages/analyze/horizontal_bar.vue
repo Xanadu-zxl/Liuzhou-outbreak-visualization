@@ -8,10 +8,13 @@
     <div class="chart-container">
       <div class="chart-content">
         <horizontal-bar
-        :data="barData"
-        labelKey="label"
-        :valueKey="['count']"
-        :theme="{background: 'transparent'}"
+          :data="barData"
+          labelKey="label"
+          :valueKey="['count']"
+          :theme="{background: 'transparent'}"
+          :series="['#0d83ed']"
+          :gap="{outer: .95, inner: .8}"
+          :labels="[{fill: '#0d83ed'}]"
       />
       </div>
     </div>
