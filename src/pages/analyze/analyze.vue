@@ -11,7 +11,7 @@
 
 <script>
 import AnalyzeHeader from './Header'
-import HomeFooter from '../home/components/Footer'
+import HomeFooter from './Footer'
 import Pie from './pie'
 import HorizontalBar from './horizontal_bar'
 import Donut from './donut'
