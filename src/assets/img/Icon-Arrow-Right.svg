@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Icon-Arrow-Right</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icon-Arrow-Right" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon-Arrow-Left" transform="translate(5.000000, 0.000000)" fill="#999999B3" fill-rule="nonzero">
+            <path d="M1.71428571,24 C1.2,24 0.857142857,23.8285714 0.514285714,23.4857143 C-0.171428571,22.8 -0.171428571,21.7714286 0.514285714,21.0857143 L9.6,12 L0.514285714,2.91428571 C-0.171428571,2.22857143 -0.171428571,1.2 0.514285714,0.514285714 C1.2,-0.171428571 2.22857143,-0.171428571 2.91428571,0.514285714 L13.2,10.8 C13.5428571,11.1428571 13.7142857,11.4857143 13.7142857,12 C13.7142857,12.5142857 13.5428571,12.8571429 13.2,13.2 L2.91428571,23.4857143 C2.57142857,23.8285714 2.22857143,24 1.71428571,24 Z" id="路径"></path>
+        </g>
+    </g>
+</svg>

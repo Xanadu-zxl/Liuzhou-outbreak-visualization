@@ -16,7 +16,7 @@
         <img class="digital-roll-next_icon" style="margin-left: 0.1rem" src="../../assets/img/Icon-Arrow-Right.svg" alt="next-icon">
       </div>
       <div class="digital-roll-container--half">
-      <div class="digital-roll-yesterday--top">昨日+{{ companyUpAmount }}人</div>
+      <div class="digital-roll-yesterday--top">昨日+{{ companyUpAmount }}</div>
       <digital-roll
         style="margin-bottom: 2.475rem"
         title-position="bottom"
@@ -25,7 +25,7 @@
         :suffix-style="digital_suffix"
         :content="totalCompany"
       ></digital-roll>
-      <div class="digital-roll-yesterday--bottom">昨日+{{ resumeWorkAmount }}人</div>
+      <div class="digital-roll-yesterday--bottom">昨日+{{ resumeWorkAmount }}</div>
       <digital-roll
         title-position="bottom"
         :title-style="digital_title"
@@ -36,7 +36,7 @@
     </div>
       <div class="digital-roll-container--half">
 <!--        <div class="digital-roll-beizhu">(包括出差、休假、旅游、探亲)</div>-->
-        <div class="digital-roll-yesterday--top">昨日+{{ huBeiProvinceAmount}}人</div>
+        <div class="digital-roll-yesterday--top">昨日+{{ huBeiProvinceAmount}}</div>
         <digital-roll
           style="margin-bottom: 2.475rem"
           title-position="bottom"
@@ -45,7 +45,7 @@
           :suffix-style="digital_suffix"
           :content="huBeiProvince"
         ></digital-roll>
-        <div class="digital-roll-yesterday--bottom">昨日+{{ inFocusProvinceAmount  }}人</div>
+        <div class="digital-roll-yesterday--bottom">昨日+{{ inFocusProvinceAmount  }}</div>
         <digital-roll
           title-position="bottom"
           :title-style="digital_title"
@@ -60,7 +60,7 @@
         <img class="digital-roll-next_icon" style="margin-right: 0.1rem" src="../../assets/img/Icon-Arrow-Left.svg" alt="next-icon">
       </div>
       <div class="digital-roll-container--half">
-        <div class="digital-roll-yesterday--top">昨日+{{ closeExposureAmount }}人</div>
+        <div class="digital-roll-yesterday--top">昨日+{{ closeExposureAmount }}</div>
         <digital-roll
           style="margin-bottom: 2.475rem"
           title-position="bottom"
@@ -69,7 +69,7 @@
           :suffix-style="digital_suffix"
           :content="closeExposure"
         ></digital-roll>
-        <div class="digital-roll-yesterday--bottom">昨日+{{ medicalObserverAmount }}人</div>
+        <div class="digital-roll-yesterday--bottom">昨日+{{ medicalObserverAmount }}</div>
         <digital-roll
           title-position="bottom"
           :title-style="digital_title"
