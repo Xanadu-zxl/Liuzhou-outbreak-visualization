@@ -13,11 +13,12 @@
     </div>
     <div class="digital-roll-container" v-if="showFirstPage">
       <div class="digital-roll-next" @click="nextPage">
-        <img class="digital-roll-next_icon" src="../../assets/img/Icon-Arrow-Right.svg" alt="next-icon">
+        <img class="digital-roll-next_icon" style="margin-left: 0.1rem" src="../../assets/img/Icon-Arrow-Right.svg" alt="next-icon">
       </div>
       <div class="digital-roll-container--half">
       <div class="digital-roll-yesterday--top">昨日+{{ companyUpAmount }}人</div>
       <digital-roll
+        style="margin-bottom: 2.475rem"
         title-position="bottom"
         :title-style="digital_title"
         :digital-style="digital_digital"
@@ -34,8 +35,10 @@
       ></digital-roll>
     </div>
       <div class="digital-roll-container--half">
+<!--        <div class="digital-roll-beizhu">(包括出差、休假、旅游、探亲)</div>-->
         <div class="digital-roll-yesterday--top">昨日+{{ huBeiProvinceAmount}}人</div>
         <digital-roll
+          style="margin-bottom: 2.475rem"
           title-position="bottom"
           :title-style="digital_title"
           :digital-style="digital_digital"
@@ -54,11 +57,12 @@
     </div>
     <div class="digital-roll-container" v-if="!showFirstPage">
       <div class="digital-roll-last" @click="lastPage">
-        <img class="digital-roll-next_icon" src="../../assets/img/Icon-Arrow-Left.svg" alt="next-icon">
+        <img class="digital-roll-next_icon" style="margin-right: 0.1rem" src="../../assets/img/Icon-Arrow-Left.svg" alt="next-icon">
       </div>
       <div class="digital-roll-container--half">
         <div class="digital-roll-yesterday--top">昨日+{{ closeExposureAmount }}人</div>
         <digital-roll
+          style="margin-bottom: 2.475rem"
           title-position="bottom"
           :title-style="digital_title"
           :digital-style="digital_digital"
@@ -190,14 +194,16 @@ export default {
   width: 100%;
   left: 0;
   top: 0;
-  height: 2.25rem;
+  height: 2.3rem;
   background-color: #2583D9;
 }
 .analyze-tab {
+  white-space: nowrap;
+  z-index: 2;
   color: #FFFFFF;
   font-size: 0.8rem;
   font-weight: 500;
-  line-height: 2.25rem;
+  line-height: 2.3rem;
   padding: 0 .75rem;
   margin-right: .3rem;
 }
@@ -205,10 +211,12 @@ export default {
   color: #FFFFFF;
   font-size: 0.8rem;
   font-weight: 500;
-  line-height: 2.25rem;
+  line-height: 2.3rem;
   padding: 0 .75rem;
   margin-right: .3rem;
   opacity: 50%;
+  width: 3.2rem;
+  text-align: center;
 }
 .analyze-tab:after{
   content: '';
@@ -222,8 +230,6 @@ export default {
   top: 0;
   position: absolute;
   width: 100%;
-  display: flex;
-  align-items: center;
   height: 7.15rem;
   background-position: bottom right;
   background-repeat:no-repeat;
@@ -234,6 +240,7 @@ export default {
   }
 
 .logo-word {
+  margin-top: 1.4rem;
   display: flex;
   flex-flow: column;
   }
@@ -259,13 +266,20 @@ export default {
   background-color: #fff;
   border-radius: 0.35rem;
   margin: 8rem 4% 0.5rem;
-  padding: 1.15rem 0;
+  padding: 2.125rem 0 1.15rem;
+}
+.digital-roll-beizhu {
+  position: absolute;
+  bottom: 0;
+  font-size: 0.45rem;
+  color:#999999;
+  white-space: nowrap;
 }
 .digital-roll-next {
   position: absolute;
   right: 0;
   top: 50%;
-  transform: translate(50%, -50%);
+  transform: translate(33%, -50%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -274,13 +288,13 @@ export default {
   border-radius: .625rem;
   border: .05rem solid #EAEAEA;
   background-color: #ffffff;
-  box-shadow: 0 .1rem #00000014;
+  box-shadow: 0 .1rem .5rem #00000014;
 }
 .digital-roll-last {
   position: absolute;
   left: 0;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-33%, -50%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -289,7 +303,7 @@ export default {
   border-radius: .625rem;
   border: .05rem solid #EAEAEA;
   background-color: #ffffff;
-  box-shadow: 0 .1rem #00000014;
+  box-shadow: 0 .1rem .5rem #00000014;
 }
 .digital-roll-next_icon {
   width: .5rem;
@@ -304,16 +318,26 @@ export default {
 
 .digital-roll-yesterday--top {
   margin-bottom: .1rem;
-  color: #666666;
+  color: #629BCD;
+  padding: .075rem .15rem;
   font-weight: 400;
-  font-size: 0.55rem;
+  font-size: 0.45rem;
   text-align: left;
+  border-radius: .1rem;
+  background-color: #EAF4FC;
+  position: absolute;
+  top: 1rem;
 }
 .digital-roll-yesterday--bottom {
-  margin-top: 1.5rem;
-  color: #666666;
+  position: absolute;
+  top: 6.1rem;
+  color: #629BCD;
+  padding: .075rem .15rem;
   font-weight: 400;
   font-size: 0.55rem;
   text-align: left;
+  border-radius: .1rem;
+  background-color: #EAF4FC;
+  margin-bottom: .1rem;
 }
 </style>
