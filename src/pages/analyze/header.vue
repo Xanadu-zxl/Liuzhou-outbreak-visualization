@@ -6,8 +6,8 @@
         <img src="../../assets/img/banner-word.png" alt="word" class="banner-word">
       </div>
     </div>
-    <div class="digital-roll-container">
-      <div class="digital-roll-next">
+    <div class="digital-roll-container" v-if="showFirstPage">
+      <div class="digital-roll-next" @click="nextPage">
         <img class="digital-roll-next_icon" src="../../assets/img/Icon-Arrow-Right.svg" alt="next-icon">
       </div>
       <div class="digital-roll-container--half">
@@ -46,7 +46,30 @@
           :content="inFocusProvince"
         ></digital-roll>
       </div>
+    </div>
+    <div class="digital-roll-container" v-if="!showFirstPage">
+      <div class="digital-roll-last" @click="lastPage">
+        <img class="digital-roll-next_icon" src="../../assets/img/Icon-Arrow-Left.svg" alt="next-icon">
       </div>
+      <div class="digital-roll-container--half">
+        <div class="digital-roll-yesterday--top">昨日+{{ closeExposureAmount }}人</div>
+        <digital-roll
+          title-position="bottom"
+          :title-style="digital_title"
+          :digital-style="digital_digital"
+          :suffix-style="digital_suffix"
+          :content="closeExposure"
+        ></digital-roll>
+        <div class="digital-roll-yesterday--bottom">昨日+{{ medicalObserverAmount }}人</div>
+        <digital-roll
+          title-position="bottom"
+          :title-style="digital_title"
+          :digital-style="digital_digital"
+          :suffix-style="digital_suffix"
+          :content="medicalObserver"
+        ></digital-roll>
+      </div>
+    </div>
   </header>
 </template>
 <script>
@@ -82,6 +105,18 @@ export default {
         digital: 10
       },
       inFocusProvinceAmount: 12,
+      closeExposure: {
+        title: '密切接触者人数',
+        suffix: '人',
+        digital: 10
+      },
+      closeExposureAmount: 12,
+      medicalObserver: {
+        title: '医学观察人员',
+        suffix: '人',
+        digital: 10
+      },
+      medicalObserverAmount: 12,
       digital_title: {
         color: '#666666',
         fontSize: '0.6rem',
@@ -97,7 +132,8 @@ export default {
         color: '#999999',
         fontSize: '0.55rem',
         fontWeight: 400
-      }
+      },
+      showFirstPage: true
     }
   },
   created() {
@@ -113,10 +149,27 @@ export default {
       this.huBeiProvince.digital = data[0][0];
       this.huBeiProvinceAmount = data[0][1]
     });
-    axios.get('/8db746ce-e83d-4adc-b8a6-a08b4958581c/data').then(({data: {data, schema}}) => {
+    axios.get('/40a99333-c802-4711-8a40-cef4d9f5579e/data').then(({data: {data, schema}}) => {
       this.inFocusProvince.digital = data[0][0];
       this.inFocusProvinceAmount = data[0][1]
     });
+    axios.get('/8db746ce-e83d-4adc-b8a6-a08b4958581c/data').then(({data: {data, schema}}) => {
+      this.closeExposure.digital = data[0][0];
+      this.closeExposureAmount = data[0][1]
+    });
+    axios.get('/398a1082-5274-4c84-a894-bae5fcbb87a9/data').then(({data: {data, schema}}) => {
+      this.medicalObserver.digital = data[0][0];
+      this.medicalObserverAmount = data[0][1]
+    });
+  },
+
+  methods: {
+    nextPage () {
+      this.showFirstPage = false
+    },
+    lastPage () {
+      this.showFirstPage = true
+    }
   }
 }
 </script>
@@ -216,7 +269,7 @@ export default {
   background-color: #fff;
   border-radius: 0.35rem;
   margin: 0.75rem 4% 0.5rem;
-  padding: 1.25rem 0.5rem;
+  padding: 1.15rem 0;
 }
 .digital-roll-next {
   position: absolute;
@@ -233,7 +286,21 @@ export default {
   background-color: #ffffff;
   box-shadow: 0 .1rem #00000014;
 }
-
+.digital-roll-last {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: .625rem;
+  border: .05rem solid #EAEAEA;
+  background-color: #ffffff;
+  box-shadow: 0 .1rem #00000014;
+}
 .digital-roll-next_icon {
   width: .5rem;
   height: .5rem;
@@ -246,7 +313,6 @@ export default {
 }
 
 .digital-roll-yesterday--top {
-  margin-top: 1.15rem;
   margin-bottom: .1rem;
   color: #666666;
   font-weight: 400;
@@ -255,7 +321,6 @@ export default {
 }
 .digital-roll-yesterday--bottom {
   margin-top: 1.5rem;
-  margin-bottom: .1rem;
   color: #666666;
   font-weight: 400;
   font-size: 0.55rem;
