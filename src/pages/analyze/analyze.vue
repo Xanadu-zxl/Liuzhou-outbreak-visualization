@@ -44,8 +44,10 @@ export default {
   font-weight: 500;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   margin-bottom: .75rem;
   letter-spacing: .025rem;
+  line-height: 1;
 
   .analyze-chart-title-badge {
     width: .25rem;
@@ -59,6 +61,15 @@ export default {
     color: #999999;
     font-size: .6rem;
     margin-left: 0.2rem;
+  }
+
+  .analyze-chart-subtitle {
+    color: #999999;
+    font-size: .55rem;
+    padding-left: .7rem;
+    flex: 0 0 1;
+    line-height: 1;
+    margin: .4rem 0 1rem 0;
   }
 }
 </style>
