@@ -14,7 +14,6 @@
           :theme="{background: 'transparent'}"
           :series="['#0d83ed']"
           :gap="{outer: .95, inner: .8}"
-          :labels="[{fill: '#0d83ed'}]"
       />
       </div>
     </div>

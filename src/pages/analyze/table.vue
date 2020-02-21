@@ -6,9 +6,25 @@
       <div class="analyze-chart-subtitle">因涉及隐私信息保护，企业防疫联系人请在后台进行查阅</div>
     </div>
     <vis-table
+      v-if="tableData.length >0"
       :headers="tableHeader"
       :data="tableData"
     />
+    <div class="table table--stripe" v-else>
+      <div class="table__head">
+        <table>
+          <thead>
+            <tr>
+              <th>企业名称</th>
+              <th>防疫物资保障状态</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <div class="table--empty">
+        <div>所有企业防疫物资储备良好</div>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -47,10 +63,22 @@ export default {
     font-size: .65rem !important;
     font-weight: 500;
 
+    table {
+      width: 100%;
+    }
+
     th {
       text-align: left;
       height: 2rem;
       padding: .4rem .4rem;
+    }
+
+    th:nth-child(1) {
+      width: 60%;
+    }
+
+    th:nth-child(2) {
+      width: 40%;
     }
   }
 
@@ -83,6 +111,15 @@ export default {
     tr:nth-child(odd) {
       background-color: transparent;
     }
+  }
+
+  .table--empty {
+    height: 1.75rem;
+    background-color: rgba(188, 188, 188, .08);
+    font-size: .65rem;
+    color: #0c82ec;
+    line-height: 1.75rem;
+    text-align: center;
   }
 }
 </style>
