@@ -2,8 +2,7 @@
   <header class="header">
     <div class="top-content">
       <div class="logo-word">
-        <img src="../../assets/img/logo.png" alt="word" class="banner-logo">
-        <img src="../../assets/img/banner-word.png" alt="word" class="banner-word">
+        <img src="../../assets/img/Banner-Slogon.png" alt="word" class="banner-word">
       </div>
     </div>
     <div class="digital-roll-container" v-if="showFirstPage">
@@ -227,14 +226,16 @@ export default {
 }
 
 .top-content{
-    height:10.2rem;
-    background-position: bottom right;
-    background-repeat:no-repeat;
-    background-size: auto 100%;
-    background-image: url("../../assets/img/banner-m.png");
-    padding: 0 4%;
+  display: flex;
+  align-items: center;
+  height: 7.15rem;
+  background-position: bottom right;
+  background-repeat:no-repeat;
+  background-size: 100% 100%;
+  background-image: url("../../assets/img/Banner.png");
+  padding: 0 4%;
   }
-    @media screen and (min-width: 900px) {
+  @media screen and (min-width: 900px) {
     .top-content{
       background-image: url("../../assets/img/banner-pc.png");
       background-size: auto 124%;
@@ -243,8 +244,8 @@ export default {
 }
 
 .logo-word {
-    display: flex;
-    flex-flow: column;
+  display: flex;
+  flex-flow: column;
   }
 
 .banner-bg {
@@ -252,9 +253,8 @@ export default {
   }
 
 .banner-word {
-    margin-top: 2.15rem;
-    width: 9.2rem;
-    max-height: 4.05rem;
+  width: 12.95rem;
+  height: 2.7rem;
   }
 
 .banner-logo {
