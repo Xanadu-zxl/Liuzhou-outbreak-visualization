@@ -237,6 +237,7 @@ export default {
   background-image: url("../../assets/img/Banner.png");
   margin-top: 2.25rem;
   padding: 0 4%;
+  box-sizing: border-box;
   }
 
 .logo-word {
