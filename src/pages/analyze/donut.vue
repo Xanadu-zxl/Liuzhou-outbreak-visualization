@@ -34,7 +34,6 @@ export default {
 
   created () {
     axios.get('/8a0b6c83-919e-4b12-b921-5e8635f005ce/data').then(({data: {data, schema}}) => {
-      console.log(data, schema)
       this.donutData = data.map((item, index) => {
         return {
           label: item[0],

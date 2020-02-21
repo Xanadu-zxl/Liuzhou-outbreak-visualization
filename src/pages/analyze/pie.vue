@@ -9,7 +9,14 @@
       :data="pieData"
       labelKey="label"
       :valueKey="['count']"
-      :theme="{background: 'transparent'}"
+      color="#333333"
+      :theme="{
+        background: 'transparent',
+        colors: ['#ffa90e', '#0085ff'],
+        font: {
+          family: 'Oswald-Regular',
+        }
+      }"
     />
   </section>
 </template>
