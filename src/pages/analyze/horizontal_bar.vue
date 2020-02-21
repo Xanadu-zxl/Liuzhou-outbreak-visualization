@@ -14,6 +14,10 @@
           :theme="{background: 'transparent'}"
           :series="['#0d83ed']"
           :gap="{outer: .95, inner: .8}"
+          :crossAxis="{range: {count: 8}}"
+          :tooltipOptions="{
+            background: '#ffffff'
+          }"
       />
       </div>
     </div>

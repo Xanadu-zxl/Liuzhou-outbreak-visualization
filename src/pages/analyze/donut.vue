@@ -29,6 +29,9 @@
             size: 9,
           },
         }"
+        :tooltipOptions="{
+          background: '#ffffff'
+        }"
       />
     </div>
   </section>

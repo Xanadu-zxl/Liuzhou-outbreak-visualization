@@ -14,9 +14,15 @@
         :theme="{
           background: 'transparent',
           colors: ['#ffa90e', '#0085ff'],
+          label: {
+            fill: '#333333'
+          },
           font: {
             family: 'Oswald-Regular',
           }
+        }"
+        :tooltipOptions="{
+          background: '#ffffff'
         }"
       />
     </div>
